@@ -1,0 +1,20 @@
+<div class="mobile">
+    <table class="bordered">
+        <thead>
+        <tr>
+            <th><fmt:message key="label.service.id"/></th>
+            <th><fmt:message key="label.service.name"/></th>
+            <th><fmt:message key="label.service.price"/></th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach items="${requestScope.computerServices}" var="service">
+            <tr>
+                <td> ${service.id}</td>
+                <td> ${service.serviceName}</td>
+                <td> ${service.price}</td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</div>
