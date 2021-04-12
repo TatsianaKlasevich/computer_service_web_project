@@ -1,0 +1,12 @@
+2021-04-12 17:57:16 [main] DEBUG GeneralValidator - true
+2021-04-12 17:57:16 [main] DEBUG GeneralValidator - true
+2021-04-12 17:57:16 [main] DEBUG GeneralValidator - true
+2021-04-12 17:57:16 [main] DEBUG GeneralValidator - true
+2021-04-12 17:57:16 [main] DEBUG GeneralValidator - is valid pass true
+2021-04-12 17:57:16 [main] DEBUG GeneralValidator - is valid repeated pass true
+2021-04-12 17:57:16 [main] DEBUG GeneralValidator - false
+2021-04-12 17:57:16 [main] DEBUG GeneralValidator - true
+2021-04-12 17:57:16 [main] DEBUG GeneralValidator - false
+2021-04-12 17:57:16 [main] DEBUG GeneralValidator - false
+2021-04-12 17:57:16 [main] DEBUG GeneralValidator - is valid pass true
+2021-04-12 17:57:16 [main] DEBUG GeneralValidator - is valid repeated pass false
