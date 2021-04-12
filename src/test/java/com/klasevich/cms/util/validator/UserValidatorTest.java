@@ -1,6 +1,5 @@
 package com.klasevich.cms.util.validator;
 
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -41,5 +40,4 @@ public class UserValidatorTest {
         boolean actual = UserValidator.isValidRegistration(data);
         assertEquals(actual,expected);
     }
-
 }

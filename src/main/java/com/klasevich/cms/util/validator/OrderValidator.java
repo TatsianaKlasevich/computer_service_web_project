@@ -8,6 +8,7 @@ import static com.klasevich.cms.command.command_parameter.RequestParameter.*;
 import static com.klasevich.cms.util.validator.GeneralValidator.*;
 
 public class OrderValidator {
+
     public static boolean isValidOrder(Map<String, String> data) {
         boolean result = true;
         String date = data.get(DATE);
