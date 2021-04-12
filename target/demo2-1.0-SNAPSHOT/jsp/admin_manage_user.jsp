@@ -12,7 +12,7 @@
 
 <html>
 <head>
-    <title><fmt:message key="label.user.main"/></title>
+    <title>Manage user</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/media-queries.css" type="text/css">
 </head>
@@ -25,8 +25,8 @@
         <div class="container">
             <div class="content">
                 <div class="main">
-                    <form method="get" action="controller">
-                        <input type="hidden" name="command" value="find_user_by_parameter">
+                    <form method="post" action="controller">
+                        <input type="hidden" name="command" value="find_users_by_parameter">
                         <div class="row">
                             <label><fmt:message key="find.user.by.parameter"/>:</label>
                             <input type="text" name="parameter">
@@ -40,7 +40,7 @@
                             ${requestScope.messageWarning}
                             <br/>
                             <br/>
-                            <form method="get" action="controller">
+                            <form method="post" action="controller">
                                 <input type="hidden" name="command" value="show_users">
                                 <button type="submit"><fmt:message key="button.show.users"/></button>
                             </form>

@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/media-queries.css" type="text/css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/popup.css" type="text/css">
-    <title><fmt:message key="label.user.main"/></title>
+    <title>Show orders</title>
 </head>
 <body>
 <div class="wrapper">

@@ -16,9 +16,10 @@ import java.util.Locale;
 
 import static com.klasevich.cms.command.CommandResult.Type.FORWARD;
 import static com.klasevich.cms.command.CommandResult.Type.REDIRECT;
-import static com.klasevich.cms.command.PagePath.*;
-import static com.klasevich.cms.command.RequestAttribute.*;
-import static com.klasevich.cms.command.RequestParameter.ORDER_ID;
+import static com.klasevich.cms.command.command_parameter.PagePath.*;
+import static com.klasevich.cms.command.command_parameter.RequestAttribute.*;
+import static com.klasevich.cms.command.command_parameter.RequestParameter.ORDER_ID;
+import static com.klasevich.cms.command.command_parameter.UrlPattern.TO_SHOW_USER_ORDER_COMMAND;
 
 public class ChangeOrderStatusCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
@@ -32,23 +33,24 @@ public class ChangeOrderStatusCommand implements Command {
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
         CommandResult commandResult = new CommandResult(USER_ORDER, FORWARD);
-        int orderId=Integer.parseInt(request.getParameter(ORDER_ID));
+        int orderId = Integer.parseInt(request.getParameter(ORDER_ID));
         logger.debug("orderId {}", orderId);
         logger.debug("string status {}", request.getParameter(STATUS));
-        String statusString=request.getParameter(STATUS);
+        String statusString = request.getParameter(STATUS);
         logger.debug("status string in command {}", statusString);
-        Status status=Status.valueOf(statusString.toUpperCase(Locale.ROOT));
+        Status status = Status.valueOf(statusString.toUpperCase(Locale.ROOT));
+        if (status == Status.CHECKING || status == Status.WORKING) {
+            status = Status.WORKING;
+        }
         try {
-            if (service.changeOrderStatus(status, orderId)){
-                request.setAttribute(MESSAGE_WARNING, MessageManager.getProperty("message.status.changed"));
-                commandResult = new CommandResult(USER_ORDER, REDIRECT);
-            }
-            else {
-                request.setAttribute(MESSAGE_WARNING,MessageManager.getProperty("message.status.not.changed"));
+            if (service.changeOrderStatus(status, orderId)) {
+                commandResult = new CommandResult(TO_SHOW_USER_ORDER_COMMAND + orderId, REDIRECT);
+            } else {
+                request.setAttribute(MESSAGE_WARNING, MessageManager.getProperty("message.status.not.changed"));
             }
         } catch (ServiceException e) {
             logger.error(e);
-            commandResult=new CommandResult(ERROR_500, FORWARD);
+            commandResult = new CommandResult(ERROR_500, FORWARD);
         }
         return commandResult;
     }

@@ -67,13 +67,16 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public boolean removeOrder(int id) throws ServiceException {
         try {
-            return orderDao.deleteOrderById(id);
+            boolean result = orderDao.deleteOrderById(id);
+            logger.debug("order removed - {}", result);
+            return result;
         } catch (DaoException e) {
             throw new ServiceException(e);
         }
     }
+
     @Override
-    public boolean removeServiceFromOrder(int serviceId,int orderId) throws ServiceException {
+    public boolean removeServiceFromOrder(int serviceId, int orderId) throws ServiceException {
         try {
             return orderDao.deleteServiceByOrderId(serviceId, orderId);
         } catch (DaoException e) {

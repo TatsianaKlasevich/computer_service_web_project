@@ -12,7 +12,7 @@
 
 <html>
 <head>
-    <title><fmt:message key="label.user.main"/></title>
+    <title>Manage service</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/media-queries.css" type="text/css">
     <!-- jQuery -->
@@ -51,13 +51,15 @@
                             <div class="row">
                                 <label><fmt:message key="edit.service.name"/></label>
                                 <input type="text" name=serviceName value="${requestScope.serviceName}"
-                                       pattern="[а-яА-Я,a-zA-Z]+{1,125}" placeholder="<fmt:message key="label.service.name"/>"
+                                       pattern="[а-яА-Я,a-zA-Z]+{1,125}"
+                                       placeholder="<fmt:message key="label.service.name"/>"
                                        data-toggle="tooltip" data-placement="bottom"
                                        title="<fmt:message key="rule.text"/>">
                             </div>
                             <div class="row">
                                 <label><fmt:message key="label.price"/></label>
-                                <input type="text" name=servicePrice value="${requestScope.servicePrice}" placeholder="00.00"
+                                <input type="text" name=servicePrice value="${requestScope.servicePrice}"
+                                       placeholder="00.00"
                                        pattern="(\d+){1,3}\.?(\d){0,2}?"
                                        data-toggle="tooltip"
                                        title="<fmt:message key="rule.price"/>" data-placement="bottom">

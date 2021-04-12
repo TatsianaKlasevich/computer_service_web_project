@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-import static com.klasevich.cms.command.RequestParameter.PARAM_PASSWORD;
+import static com.klasevich.cms.command.command_parameter.RequestParameter.PARAM_PASSWORD;
 
 public class UserServiceImpl implements UserService {
     private static final Logger logger = LogManager.getLogger();
@@ -43,11 +43,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Optional<User> findUserByParameter(String parameter) throws ServiceException {
+    public List<User> findUsersByParameter(String parameter, int pageNumber, int limit) throws ServiceException {
         try {
-            Optional<User> user = userDao.findUserByParameter(parameter);
-            logger.debug("user in service {}", user);
-            return user;
+            return userDao.findUsersByParameter(parameter, pageNumber, limit);
         } catch (DaoException e) {
             throw new ServiceException(e);
         }
@@ -111,11 +109,11 @@ public class UserServiceImpl implements UserService {
             User user = factory.create(data);
             try {
                 userHasChanged = userDao.updateUser(user);
-                logger.debug("user has changed {}", userHasChanged);
             } catch (DaoException e) {
                 throw new ServiceException(e);
             }
         }
+        logger.debug("user has changed {}", userHasChanged);
         return userHasChanged;
     }
 
@@ -157,6 +155,15 @@ public class UserServiceImpl implements UserService {
     public int sizeUsers() throws ServiceException {
         try {
             return userDao.sizeUsers();
+        } catch (DaoException e) {
+            throw new ServiceException(e);
+        }
+    }
+
+    @Override
+    public int sizeUsersByParameter(String parameter) throws ServiceException {
+        try {
+            return userDao.sizeUsersByParameter(parameter);
         } catch (DaoException e) {
             throw new ServiceException(e);
         }

@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import static com.klasevich.cms.command.CommandResult.Type.FORWARD;
-import static com.klasevich.cms.command.PagePath.MAIN;
+import static com.klasevich.cms.command.command_parameter.PagePath.MAIN;
 
 public class HomeCommand implements Command {
     @Override

@@ -26,7 +26,7 @@
             $('[data-toggle="tooltip"]').tooltip();
         });
     </script>
-    <title><fmt:message key="label.user.main"/></title>
+    <title>Change user</title>
 </head>
 <body>
 <div class="wrapper">
@@ -37,48 +37,48 @@
             <br/>
             ${requestScope.messageWarning}
             <br/>
-                <form method="post" action="controller">
-                    <input type="hidden" name="command" value="change_user">
-                    <table class="table table-striped">
-                        <tr>
-                            <td>
-                                E-mail
-                            </td>
-                            <td>
-                                ${user.mail}
-                            </td>
-                        </tr>
-                    </table>
-                    <div class="row">
-                        <label><fmt:message key="label.name"/></label>
-                        <input type="text" name="name"
-                               value="${user.name}"
-                               pattern="([а-яА-Яa-zA-Z]+){2,30}"
-                               placeholder="<fmt:message key="label.name"/>"
-                               data-toggle="tooltip" data-placement="bottom"
-                               title= "<fmt:message key="rule.name"/>">
-                        <fmt:message key="rule.name"/>
-                    </div>
-                    <div class="row">
-                        <label><fmt:message key="label.surname"/></label>
-                        <input type="text" name="surname" value="${user.surname}"
-                               placeholder="<fmt:message key="label.surname"/>"
-                               pattern="([а-яА-Яa-zA-Z]+){2,30}" required
-                               data-toggle="tooltip" data-placement="bottom"
-                               title=<fmt:message key="rule.name"/>>
-                        <fmt:message key="rule.name"/>
-                    </div>
-                    <div class="row">
-                        <label><fmt:message key="label.phone"/></label>
-                        <input type="text" name="phone" value="${user.phone}"
-                               placeholder="+375440000000"
-                               pattern="\+375(44|33|25|29)(\d){7}" required
-                               data-toggle="tooltip" data-placement="bottom"
-                               title=" <fmt:message key="rule.example"/>: +375441010101">
-                        <fmt:message key="rule.example"/>: +375441010101
-                    </div>
-                    <button type="submit"><fmt:message key="button.save.change"/></button>
-                </form>
+            <form method="post" action="controller">
+                <input type="hidden" name="command" value="change_user">
+                <table class="table table-striped">
+                    <tr>
+                        <td>
+                            E-mail
+                        </td>
+                        <td>
+                            ${user.mail}
+                        </td>
+                    </tr>
+                </table>
+                <div class="row">
+                    <label><fmt:message key="label.name"/></label>
+                    <input type="text" name="name"
+                           value="${user.name}"
+                           pattern="([а-яА-Яa-zA-Z]+){2,30}"
+                           placeholder="<fmt:message key="label.name"/>"
+                           data-toggle="tooltip" data-placement="bottom"
+                           title="<fmt:message key="rule.name"/>">
+                    <fmt:message key="rule.name"/>
+                </div>
+                <div class="row">
+                    <label><fmt:message key="label.surname"/></label>
+                    <input type="text" name="surname" value="${user.surname}"
+                           placeholder="<fmt:message key="label.surname"/>"
+                           pattern="([а-яА-Яa-zA-Z]+){2,30}" required
+                           data-toggle="tooltip" data-placement="bottom"
+                           title=<fmt:message key="rule.name"/>>
+                    <fmt:message key="rule.name"/>
+                </div>
+                <div class="row">
+                    <label><fmt:message key="label.phone"/></label>
+                    <input type="text" name="phone" value="${user.phone}"
+                           placeholder="+375440000000"
+                           pattern="\+375(44|33|25|29)(\d){7}" required
+                           data-toggle="tooltip" data-placement="bottom"
+                           title=" <fmt:message key="rule.example"/>: +375441010101">
+                    <fmt:message key="rule.example"/>: +375441010101
+                </div>
+                <button type="submit"><fmt:message key="button.save.change"/></button>
+            </form>
         </div>
     </div>
     <%@ include file="/jsp/segment/footer.jsp" %>

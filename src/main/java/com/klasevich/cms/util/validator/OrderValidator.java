@@ -4,7 +4,7 @@ import com.klasevich.cms.util.MessageManager;
 
 import java.util.Map;
 
-import static com.klasevich.cms.command.RequestParameter.*;
+import static com.klasevich.cms.command.command_parameter.RequestParameter.*;
 import static com.klasevich.cms.util.validator.GeneralValidator.*;
 
 public class OrderValidator {

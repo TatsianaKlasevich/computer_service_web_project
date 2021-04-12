@@ -4,8 +4,8 @@ import static com.klasevich.cms.util.validator.ValidationRegexPattern.FIRST_SEPA
 import static com.klasevich.cms.util.validator.ValidationRegexPattern.SECOND_SEPARATOR;
 
 public class DateValidator {
-    public static String changeDate(String date){
-       String newDate= date.replaceAll(FIRST_SEPARATOR, SECOND_SEPARATOR);
+    public static String changeDate(String date) {
+        String newDate = date.replaceAll(FIRST_SEPARATOR, SECOND_SEPARATOR);
         return newDate;
     }
 }

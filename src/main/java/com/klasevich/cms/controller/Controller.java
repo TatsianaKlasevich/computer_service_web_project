@@ -16,9 +16,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Optional;
 
-import static com.klasevich.cms.command.PagePath.INDEX;
-import static com.klasevich.cms.command.RequestParameter.COMMAND;
-import static com.klasevich.cms.command.UrlPattern.CONTROLLER;
+import static com.klasevich.cms.command.command_parameter.PagePath.INDEX;
+import static com.klasevich.cms.command.command_parameter.RequestParameter.COMMAND;
+import static com.klasevich.cms.command.command_parameter.UrlPattern.CONTROLLER;
 
 @WebServlet(urlPatterns = {CONTROLLER})
 public class Controller extends HttpServlet {
@@ -53,11 +53,13 @@ public class Controller extends HttpServlet {
                 break;
             }
             case REDIRECT: {
+                logger.debug("redirect path {}",request.getContextPath() + urlPath );
                 response.sendRedirect(request.getContextPath() + urlPath);
                 break;
             }
         }
     }
+
     public void destroy() {
         try {
             ConnectionPool.getInstance().destroyPool();

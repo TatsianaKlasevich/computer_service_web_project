@@ -9,24 +9,25 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
-import static com.klasevich.cms.command.RequestParameter.RU;
-import static com.klasevich.cms.command.SessionAttribute.CURRENT_ROLE;
-import static com.klasevich.cms.command.SessionAttribute.LOCALE;
+import static com.klasevich.cms.command.command_parameter.RequestParameter.RU;
+import static com.klasevich.cms.command.command_parameter.SessionAttribute.CURRENT_ROLE;
+import static com.klasevich.cms.command.command_parameter.SessionAttribute.LOCALE;
 
 @WebListener
 public class SessionListener implements HttpSessionListener {
     private static final Logger logger = LogManager.getLogger();
+
     @Override
     public void sessionCreated(HttpSessionEvent event) {
         HttpSession session = event.getSession();
-        session.setAttribute(LOCALE,RU);
-        logger.info("session locale {}",session.getAttribute(LOCALE));
+        session.setAttribute(LOCALE, RU);
+        logger.info("session locale {}", session.getAttribute(LOCALE));
         session.setAttribute(CURRENT_ROLE, Role.GUEST);
-        logger.info("session current role {}",session.getAttribute(CURRENT_ROLE));
+        logger.info("session current role {}", session.getAttribute(CURRENT_ROLE));
     }
 
     @Override
-    public void sessionDestroyed(HttpSessionEvent event){
+    public void sessionDestroyed(HttpSessionEvent event) {
         event.getSession().invalidate();
         logger.info("Session destroyed");
     }

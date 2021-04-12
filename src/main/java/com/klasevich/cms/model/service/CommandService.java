@@ -19,8 +19,6 @@ public interface CommandService {
 
     Optional<ComputerService> findServiceById(int id) throws ServiceException;
 
-    boolean changeService(ComputerService computerService) throws ServiceException;
-
     List<ComputerService> findServicesByPageNumber(int pageNumber, int limit) throws ServiceException;
 
     int sizeServices() throws ServiceException;

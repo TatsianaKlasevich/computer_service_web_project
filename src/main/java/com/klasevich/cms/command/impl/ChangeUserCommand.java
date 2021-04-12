@@ -2,7 +2,7 @@ package com.klasevich.cms.command.impl;
 
 import com.klasevich.cms.command.Command;
 import com.klasevich.cms.command.CommandResult;
-import com.klasevich.cms.command.SessionAttribute;
+import com.klasevich.cms.command.command_parameter.SessionAttribute;
 import com.klasevich.cms.model.entity.User;
 import com.klasevich.cms.model.service.ServiceException;
 import com.klasevich.cms.model.service.impl.UserServiceImpl;
@@ -19,8 +19,8 @@ import java.util.Map;
 
 import static com.klasevich.cms.command.CommandResult.Type.FORWARD;
 import static com.klasevich.cms.command.CommandResult.Type.REDIRECT;
-import static com.klasevich.cms.command.PagePath.*;
-import static com.klasevich.cms.command.RequestParameter.*;
+import static com.klasevich.cms.command.command_parameter.PagePath.*;
+import static com.klasevich.cms.command.command_parameter.RequestParameter.*;
 
 public class ChangeUserCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
@@ -35,7 +35,9 @@ public class ChangeUserCommand implements Command {
         CommandResult commandResult = new CommandResult(CHANGE_USER, FORWARD);
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute(SessionAttribute.USER);
+        logger.debug("user in ChangeUserCommand {}", user);
         String name = request.getParameter(PARAM_NAME);
+        logger.debug("name in command {}", name);
         String surname = request.getParameter(PARAM_SURNAME);
         String phone = request.getParameter(PARAM_PHONE);
         name = XssProtector.protect(name);
@@ -45,7 +47,6 @@ public class ChangeUserCommand implements Command {
         data.put(PARAM_SURNAME, surname);
         data.put(PARAM_PHONE, phone);
         data.put(PARAM_MAIL, user.getMail());
-
         try {
             if (service.changeUser(data)) {
                 user.setName(data.get(PARAM_NAME));
@@ -64,7 +65,7 @@ public class ChangeUserCommand implements Command {
             }
         } catch (ServiceException e) {
             logger.error(e);
-            commandResult=new CommandResult(ERROR_500, FORWARD);
+            commandResult = new CommandResult(ERROR_500, FORWARD);
         }
         return commandResult;
     }

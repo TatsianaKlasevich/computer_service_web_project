@@ -27,5 +27,7 @@ public interface UserService {
     boolean changePassword(String mail, String password, String passwordNew, String repeatedPassword)
             throws ServiceException;
 
-    Optional<User> findUserByParameter(String parameter) throws ServiceException;
+    List<User> findUsersByParameter(String parameter, int pageNumber, int limit) throws ServiceException;
+
+    int sizeUsersByParameter(String parameter) throws ServiceException;
 }

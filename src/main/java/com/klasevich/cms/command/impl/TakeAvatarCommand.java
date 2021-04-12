@@ -13,12 +13,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 import static com.klasevich.cms.command.CommandResult.Type.FORWARD;
-import static com.klasevich.cms.command.PagePath.*;
+import static com.klasevich.cms.command.command_parameter.OtherParameter.EMPTY_PAGE;
+import static com.klasevich.cms.command.command_parameter.OtherParameter.FILE_NAME;
+import static com.klasevich.cms.command.command_parameter.PagePath.*;
 
 public class TakeAvatarCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
-    private static final String FILE_NAME = "file_name";
-    private static final String EMPTY_PAGE = "";
 
     private CommandServiceImpl service;
 
@@ -28,7 +28,7 @@ public class TakeAvatarCommand implements Command {
 
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
-        CommandResult commandResult = new CommandResult(EMPTY_PAGE,FORWARD);
+        CommandResult commandResult = new CommandResult(EMPTY_PAGE, FORWARD);
         String fileName = request.getParameter(FILE_NAME);
         logger.debug("filename in takeavatar {}", fileName);
         if (fileName.isEmpty()) {
@@ -36,10 +36,9 @@ public class TakeAvatarCommand implements Command {
         }
         try (ServletOutputStream outputStream = response.getOutputStream();) {
             outputStream.write(service.readFile(fileName));
-        }
-        catch (IOException | ServiceException e) {
+        } catch (IOException | ServiceException e) {
             logger.error(e);
-            commandResult=new CommandResult(ERROR_500, FORWARD);
+            commandResult = new CommandResult(ERROR_500, FORWARD);
         }
         return commandResult;
     }

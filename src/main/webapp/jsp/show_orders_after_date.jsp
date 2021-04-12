@@ -25,7 +25,7 @@
             $('[data-toggle="tooltip"]').tooltip();
         });
     </script>
-    <title><fmt:message key="label.user.main"/></title>
+    <title>Show orders after date</title>
 </head>
 <body>
 <div class="wrapper">

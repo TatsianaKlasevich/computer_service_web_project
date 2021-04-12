@@ -17,10 +17,11 @@ import java.util.Map;
 
 import static com.klasevich.cms.command.CommandResult.Type.FORWARD;
 import static com.klasevich.cms.command.CommandResult.Type.REDIRECT;
-import static com.klasevich.cms.command.PagePath.ADMIN_MANAGE_SERVICE;
-import static com.klasevich.cms.command.PagePath.ERROR_500;
-import static com.klasevich.cms.command.RequestAttribute.*;
-import static com.klasevich.cms.command.RequestParameter.*;
+import static com.klasevich.cms.command.command_parameter.PagePath.ADMIN_MANAGE_SERVICE;
+import static com.klasevich.cms.command.command_parameter.PagePath.ERROR_500;
+import static com.klasevich.cms.command.command_parameter.RequestAttribute.*;
+import static com.klasevich.cms.command.command_parameter.RequestParameter.*;
+import static com.klasevich.cms.command.command_parameter.UrlPattern.TO_ADMIN_MANAGE_SERVICE_COMMAND;
 
 
 public class AddServiceCommand implements Command {
@@ -46,8 +47,8 @@ public class AddServiceCommand implements Command {
         data.put(SERVICE_PRICE, priceString);
         try {
             if (service.addService(data)) {
-                request.setAttribute(MESSAGE_WARNING, MessageManager.getProperty("message.service.add.successfully"));
-                commandResult = new CommandResult(ADMIN_MANAGE_SERVICE, REDIRECT);
+                String messageWarning = MESSAGE_SERVICE_ADD;
+                commandResult = new CommandResult(TO_ADMIN_MANAGE_SERVICE_COMMAND + messageWarning, REDIRECT);
             } else {
                 logger.debug("return  category name {}", data.get(CATEGORY_NAME));
                 request.setAttribute(CATEGORY_NAME, data.get(CATEGORY_NAME));

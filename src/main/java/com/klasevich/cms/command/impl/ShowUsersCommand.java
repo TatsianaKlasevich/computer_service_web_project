@@ -14,13 +14,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 import static com.klasevich.cms.command.CommandResult.Type.FORWARD;
-import static com.klasevich.cms.command.PagePath.*;
-import static com.klasevich.cms.command.RequestAttribute.*;
-import static com.klasevich.cms.command.RequestParameter.PAGE_NUMBER;
+import static com.klasevich.cms.command.command_parameter.OtherParameter.LIMIT;
+import static com.klasevich.cms.command.command_parameter.PagePath.*;
+import static com.klasevich.cms.command.command_parameter.RequestAttribute.*;
+import static com.klasevich.cms.command.command_parameter.RequestParameter.PAGE_NUMBER;
 
 public class ShowUsersCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
-    private static final int LIMIT = 4;
 
     private UserServiceImpl service;
 
@@ -35,7 +35,7 @@ public class ShowUsersCommand implements Command {
                 Integer.parseInt(request.getParameter(PAGE_NUMBER)) : 1;
         logger.debug("page from request is {}", pageNumber);
         try {
-            List<User> users= service.findUsersByPageNumber(pageNumber, LIMIT);
+            List<User> users = service.findUsersByPageNumber(pageNumber, LIMIT);
             int sizeOfAllUsers = service.sizeUsers();
             int lastPage = (int) Math.ceil((double) sizeOfAllUsers / LIMIT);
             logger.debug("size {}", sizeOfAllUsers);
@@ -51,7 +51,7 @@ public class ShowUsersCommand implements Command {
             }
         } catch (ServiceException e) {
             logger.error(e);
-            commandResult=new CommandResult(ERROR_500, FORWARD);
+            commandResult = new CommandResult(ERROR_500, FORWARD);
         }
         return commandResult;
     }

@@ -26,6 +26,7 @@ public interface UserDao {
 
     boolean updatePassword(String mail, String encodingPasswordNew) throws DaoException;
 
-    Optional<User> findUserByParameter(String parameter) throws DaoException;
+    List<User> findUsersByParameter(String parameter,int pageNumber,int limit) throws DaoException;
+    int sizeUsersByParameter(String parameter) throws DaoException;
 
 }

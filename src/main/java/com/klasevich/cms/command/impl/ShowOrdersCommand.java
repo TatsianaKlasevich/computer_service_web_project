@@ -14,13 +14,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 import static com.klasevich.cms.command.CommandResult.Type.FORWARD;
-import static com.klasevich.cms.command.PagePath.*;
-import static com.klasevich.cms.command.RequestAttribute.*;
-import static com.klasevich.cms.command.RequestParameter.PAGE_NUMBER;
+import static com.klasevich.cms.command.command_parameter.OtherParameter.LIMIT;
+import static com.klasevich.cms.command.command_parameter.PagePath.*;
+import static com.klasevich.cms.command.command_parameter.RequestAttribute.*;
+import static com.klasevich.cms.command.command_parameter.RequestParameter.PAGE_NUMBER;
 
 public class ShowOrdersCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
-    private static final int LIMIT = 4;
 
     private OrderServiceImpl service;
 
@@ -46,12 +46,22 @@ public class ShowOrdersCommand implements Command {
                 request.setAttribute(IS_LAST_PAGE, lastPage == pageNumber);
                 request.setAttribute(ORDERS, orders);
             } else {
-                request.setAttribute(MESSAGE_WARNING, MessageManager.getProperty("message.find.order.error"));
-                commandResult = new CommandResult(ADMIN_MANAGE_ORDER, FORWARD);
+                pageNumber = pageNumber - 1;
+                if (pageNumber >= 1) {
+                    List<Order> ordersNew = service.findOrdersByPageNumber(pageNumber, LIMIT);
+                    int sizeOfAllOrdersNew = service.sizeOrders();
+                    int lastPageNew = (int) Math.ceil((double) sizeOfAllOrdersNew / LIMIT);
+                    request.setAttribute(PAGE_NUMBER, pageNumber);
+                    request.setAttribute(IS_LAST_PAGE, lastPageNew == pageNumber);
+                    request.setAttribute(ORDERS, ordersNew);
+                } else {
+                    request.setAttribute(MESSAGE_WARNING, MessageManager.getProperty("message.find.order.error"));
+                    commandResult = new CommandResult(ADMIN_MANAGE_ORDER, FORWARD);
+                }
             }
         } catch (ServiceException e) {
             logger.error(e);
-            commandResult=new CommandResult(ERROR_500, FORWARD);
+            commandResult = new CommandResult(ERROR_500, FORWARD);
         }
         return commandResult;
     }

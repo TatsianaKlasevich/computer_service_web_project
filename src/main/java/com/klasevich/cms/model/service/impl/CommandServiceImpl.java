@@ -10,7 +10,6 @@ import com.klasevich.cms.model.factory.impl.ComputerServiceFactory;
 import com.klasevich.cms.model.service.CommandService;
 import com.klasevich.cms.model.service.ServiceException;
 import com.klasevich.cms.util.mail.MailSender;
-import com.klasevich.cms.util.validator.GeneralValidator;
 import com.klasevich.cms.util.validator.ServiceValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -70,20 +69,6 @@ public class CommandServiceImpl implements CommandService {
             ComputerService service = factory.create(data);
             try {
                 result = serviceDao.addService(service);
-            } catch (DaoException e) {
-                throw new ServiceException(e);
-            }
-        }
-        return result;
-    }
-
-    @Override
-    public boolean changeService(ComputerService computerService) throws ServiceException {//todo validation
-        boolean result = false;
-        if (GeneralValidator.isValidServiceName(computerService.getServiceName())
-                && GeneralValidator.isValidPrice(String.valueOf(computerService.getPrice()))) {
-            try {
-                result = serviceDao.updateService(computerService);
             } catch (DaoException e) {
                 throw new ServiceException(e);
             }

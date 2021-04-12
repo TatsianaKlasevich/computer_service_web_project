@@ -1,6 +1,6 @@
 package com.klasevich.cms.command;
 
-import static com.klasevich.cms.command.PagePath.INDEX;
+import static com.klasevich.cms.command.command_parameter.PagePath.INDEX;
 
 public class CommandResult {
 

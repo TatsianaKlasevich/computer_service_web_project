@@ -5,7 +5,7 @@ import com.klasevich.cms.model.factory.AbstractFactory;
 
 import java.util.Map;
 
-import static com.klasevich.cms.command.RequestParameter.*;
+import static com.klasevich.cms.command.command_parameter.RequestParameter.*;
 
 public class UserFactory extends AbstractFactory<User> {
     @Override
@@ -14,7 +14,7 @@ public class UserFactory extends AbstractFactory<User> {
         String surname = data.get(PARAM_SURNAME);
         String mail = data.get(PARAM_MAIL);
         String phone = data.get(PARAM_PHONE);
-        User user = new User(name,surname,mail,phone);
+        User user = new User(name, surname, mail, phone);
         return user;
     }
 }

@@ -33,7 +33,7 @@ public class Order {
         this.category = category;
         this.problem = problem;
         this.status = status;
-        this.hasDiscount=hasDiscount;
+        this.hasDiscount = hasDiscount;
         this.user = user;
     }
 

@@ -15,7 +15,7 @@
 <head>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/media-queries.css" type="text/css">
-    <title><fmt:message key="label.service.table"/></title>
+    <title>Show user order</title>
 </head>
 <body>
 <div class="wrapper">
@@ -131,10 +131,13 @@
                         </table>
                     </div>
 
-                    <h1><fmt:message key="label.whole.amount"/> : ${requestScope.amount} <fmt:message key="label.byn"/></h1>
-                   <p> <fmt:message key="message.button.ok"/></p>
+                    <h1><fmt:message key="label.whole.amount"/> : ${requestScope.amount} <fmt:message
+                            key="label.byn"/></h1>
+                    <c:if test="${requestScope.amount>30}">
+                    <p><fmt:message key="message.button.ok"/></p>
+                    </c:if>
                     <p><fmt:message key="message.button.cancel"/></p>
-                    <p> <fmt:message key="message.warning"/></p>
+                    <p><fmt:message key="message.warning"/></p>
                     <table>
                         <tr>
                             <td>
@@ -146,14 +149,14 @@
                                 </form>
                             </td>
                             <c:if test="${requestScope.amount>30}">
-                            <td>
-                                <form method="post" action="controller">
-                                    <input type="hidden" name="command" value="change_order_status">
-                                    <input type="hidden" name="status" value="working">
-                                    <input type="hidden" name="order_id" value="${order.id}">
-                                    <button type="submit"><fmt:message key="button.ok"/></button>
-                                </form>
-                            </td>
+                                <td>
+                                    <form method="post" action="controller">
+                                        <input type="hidden" name="command" value="change_order_status">
+                                        <input type="hidden" name="status" value="${order.status}">
+                                        <input type="hidden" name="order_id" value="${order.id}">
+                                        <button type="submit"><fmt:message key="button.ok"/></button>
+                                    </form>
+                                </td>
                             </c:if>
                         </tr>
                     </table>

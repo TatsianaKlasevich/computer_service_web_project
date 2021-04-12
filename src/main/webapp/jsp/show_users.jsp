@@ -13,7 +13,7 @@
 <head>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/media-queries.css" type="text/css">
-    <title><fmt:message key="label.user.main"/></title>
+    <title>Show users</title>
 </head>
 <body>
 <div class="wrapper">
@@ -66,12 +66,9 @@
                         <td> ${user.phone}</td>
                         <td>
                             <form name="update service" method="post" action="controller">
-                                <input type="hidden" name="command" value="to_change_user">
-                                <input type="hidden" name="userId" value="${user.id}">
-                                <button type="submit"><fmt:message key="button.edit"/></button>
-                            </form>
-                            <form name="update service" method="post" action="controller">
                                 <input type="hidden" name="command" value="remove_user">
+                                <input type="hidden" name="parameter" value="${requestScope.parameter}">
+                                <input type="hidden" name="pageNumber" value="${requestScope.pageNumber}">
                                 <input type="hidden" name="userId" value="${user.id}">
                                 <button type="submit"><fmt:message key="button.remove"/></button>
                             </form>

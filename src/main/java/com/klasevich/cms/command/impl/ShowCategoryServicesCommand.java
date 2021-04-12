@@ -14,11 +14,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 import static com.klasevich.cms.command.CommandResult.Type.FORWARD;
-import static com.klasevich.cms.command.CommandResult.Type.REDIRECT;
-import static com.klasevich.cms.command.PagePath.*;
-import static com.klasevich.cms.command.PagePath.SERVICE_PRICE;
-import static com.klasevich.cms.command.RequestAttribute.*;
-import static com.klasevich.cms.command.RequestParameter.*;
+import static com.klasevich.cms.command.command_parameter.PagePath.*;
+import static com.klasevich.cms.command.command_parameter.PagePath.SERVICE_PRICE;
+import static com.klasevich.cms.command.command_parameter.RequestAttribute.*;
+import static com.klasevich.cms.command.command_parameter.RequestParameter.*;
 
 public class ShowCategoryServicesCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
@@ -39,13 +38,13 @@ public class ShowCategoryServicesCommand implements Command {
             String categoryMessage;
             if (services.size() > 0) {
                 switch (category) {
-                    case "laptop":
+                    case LAPTOP:
                         categoryMessage = "message.repair.laptop";
                         break;
-                    case "printer":
+                    case PRINTER:
                         categoryMessage = "message.repair.printer";
                         break;
-                    case "ups":
+                    case UPS:
                         categoryMessage = "message.repair.ups";
                         break;
                     default:
@@ -58,7 +57,7 @@ public class ShowCategoryServicesCommand implements Command {
             }
         } catch (ServiceException e) {
             logger.error(e);
-            commandResult=new CommandResult(ERROR_500, FORWARD);
+            commandResult = new CommandResult(ERROR_500, FORWARD);
         }
         return commandResult;
     }

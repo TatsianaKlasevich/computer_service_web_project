@@ -1,6 +1,6 @@
 package com.klasevich.cms.model.dao;
 
-public class DaoException extends Exception{
+public class DaoException extends Exception {
     public DaoException() {
     }
 

@@ -65,9 +65,9 @@ public enum CommandType {
             this.command = new FindOrdersAfterDateCommand(new OrderServiceImpl());
         }
     },
-    FIND_USER_BY_PARAMETER{
+    FIND_USERS_BY_PARAMETER {
         {
-            this.command = new FindUserByParameterCommand(new UserServiceImpl());
+            this.command = new FindUsersByParameterCommand(new UserServiceImpl());
         }
     },
     REGISTER {
@@ -105,12 +105,7 @@ public enum CommandType {
             this.command = new ShowUsersCommand(new UserServiceImpl());
         }
     },
-    CHANGE_SERVICE {
-        {
-            this.command = new ChangeServiceCommand(new CommandServiceImpl());
-        }
-    },
-    REMOVE_SERVICE {
+       REMOVE_SERVICE {
         {
             this.command = new RemoveServiceCommand(new CommandServiceImpl());
         }
@@ -170,12 +165,12 @@ public enum CommandType {
             this.command = new ToAdminManageUserCommand();
         }
     },
-    TO_ADMIN_MANAGE_ORDER{
+    TO_ADMIN_MANAGE_ORDER {
         {
             this.command = new ToAdminManageOrderCommand();
         }
     },
-    ADMIN_ADD_SERVICE_TO_ORDER{
+    ADMIN_ADD_SERVICE_TO_ORDER {
         {
             this.command = new AdminAddServiceToOrderCommand(new OrderServiceImpl(), new CommandServiceImpl());
         }
@@ -183,11 +178,6 @@ public enum CommandType {
     TO_USER_ORDER {
         {
             this.command = new ToUserOrderCommand();
-        }
-    },
-    TO_CHANGE_SERVICE {
-        {
-            this.command = new ToChangeServiceCommand(new CommandServiceImpl());
         }
     },
     TO_MAKING_ORDER {
@@ -226,6 +216,11 @@ public enum CommandType {
     SHOW_CATEGORY_SERVICES {
         {
             this.command = new ShowCategoryServicesCommand(new CommandServiceImpl());
+        }
+    },
+    TO_USER_MAIN {
+        {
+            this.command = new ToUserMainCommand();
         }
     },
     TO_CONTACTS {

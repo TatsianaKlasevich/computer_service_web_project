@@ -9,6 +9,7 @@ import static com.klasevich.cms.util.validator.ValidationRegexPattern.*;
 
 public class GeneralValidator {
     private static final Logger logger = LogManager.getLogger();
+
     public static boolean isValidCategoryName(String category) {
         Matcher matcher = CATEGORY_NAME_REGEX.matcher(category);
         logger.debug(matcher.matches());
@@ -23,9 +24,9 @@ public class GeneralValidator {
 
     public static boolean isValidId(String idString) {
         Matcher matcher = ID_REGEX.matcher(idString);
-        int id =Integer.parseInt(idString);
+        int id = Integer.parseInt(idString);
         logger.debug(matcher.matches());
-        boolean result=matcher.matches()&&id>0;
+        boolean result = matcher.matches() && id > 0;
         return result;
     }
 
@@ -52,6 +53,7 @@ public class GeneralValidator {
         logger.debug(matcher.matches());
         return matcher.matches();
     }
+
     public static boolean isValidName(String name) {
         Matcher matcher = NAME_REGEX.matcher(name);
         logger.debug(matcher.matches());
@@ -81,9 +83,10 @@ public class GeneralValidator {
         logger.debug("is valid pass {}", matcher.matches());
         return matcher.matches();
     }
+
     public static boolean isValidRepeatedPass(String password, String repeatedPassword) {
         Matcher matcher = PASS_REGEX.matcher(password);
-        boolean result = password.equals(repeatedPassword)&&matcher.matches();
+        boolean result = password.equals(repeatedPassword) && matcher.matches();
         logger.debug("is valid repeated pass {}", result);
         return result;
     }

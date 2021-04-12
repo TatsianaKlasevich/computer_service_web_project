@@ -12,7 +12,7 @@
 
 <html>
 <head>
-    <title><fmt:message key="label.user.main"/></title>
+    <title>Manage order</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/media-queries.css" type="text/css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/xcal.css"/>
@@ -41,7 +41,7 @@
                     <div class="col">
                         <br/>
                         <br/>
-                        <form method="get" action="controller">
+                        <form method="post" action="controller">
                             <input type="hidden" name="command" value="find_order_by_id">
                             <div class="row">
                                 <label><fmt:message key="find.order.by.id"/>:</label>
@@ -49,7 +49,7 @@
                                 <button type="submit"><fmt:message key="button.search"/></button>
                             </div>
                         </form>
-                        <form method="get" action="controller">
+                        <form method="post" action="controller">
                             <input type="hidden" name="command" value="find_orders_by_category">
                             <div class="row">
                                 <label><fmt:message key="find.orders.by.category"/>:</label>
@@ -61,7 +61,7 @@
                                 <button type="submit"><fmt:message key="button.search"/></button>
                             </div>
                         </form>
-                        <form method="get" action="controller">
+                        <form method="post" action="controller">
                             <input type="hidden" name="command" value="find_orders_by_status">
                             <div class="row">
                                 <label><fmt:message key="find.orders.by.status"/>:</label>
@@ -74,7 +74,7 @@
                                 <button type="submit"><fmt:message key="button.search"/></button>
                             </div>
                         </form>
-                        <form method="get" action="controller">
+                        <form method="post" action="controller">
                             <input type="hidden" name="command" value="find_orders_after_date">
                             <div class="row">
                                 <label><fmt:message key="find.orders.after.date"/>:</label>
@@ -98,7 +98,7 @@
                         <br/>
                         ${requestScope.messageWarning}
                         <br/>
-                        <form method="get" action="controller">
+                        <form method="post" action="controller">
                             <input type="hidden" name="command" value="show_orders">
                             <button type="submit"><fmt:message key="button.show.orders"/></button>
                         </form>

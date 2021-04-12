@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/media-queries.css" type="text/css">
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/css3-mediaqueries.js"></script>
-    <title>Contacts</title>
+    <title>Delivery</title>
 </head>
 <body>
 <div class="wrapper">

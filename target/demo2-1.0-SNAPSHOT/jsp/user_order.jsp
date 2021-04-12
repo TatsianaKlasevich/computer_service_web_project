@@ -14,7 +14,7 @@
 <head>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/media-queries.css" type="text/css">
-    <title><fmt:message key="label.service.table"/></title>
+    <title>User order</title>
 </head>
 <body>
 <div class="wrapper">
@@ -35,7 +35,7 @@
                         <h3><p style="color: red">Order №${order.id} is READY! </p></h3>
                     </c:if>
                 </c:forEach>
-                    <br/>
+                <br/>
             </div>
         </div>
     </div>

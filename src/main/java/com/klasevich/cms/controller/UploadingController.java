@@ -1,6 +1,6 @@
 package com.klasevich.cms.controller;
 
-import com.klasevich.cms.command.SessionAttribute;
+import com.klasevich.cms.command.command_parameter.SessionAttribute;
 import com.klasevich.cms.model.entity.User;
 import com.klasevich.cms.model.service.ServiceException;
 import com.klasevich.cms.model.service.UserService;
@@ -20,9 +20,9 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.UUID;
 
-import static com.klasevich.cms.command.PagePath.PROFILE;
-import static com.klasevich.cms.command.RequestAttribute.MESSAGE_WARNING;
-import static com.klasevich.cms.command.UrlPattern.UPLOADING_CONTROLLER;
+import static com.klasevich.cms.command.command_parameter.PagePath.PROFILE;
+import static com.klasevich.cms.command.command_parameter.RequestAttribute.MESSAGE_WARNING;
+import static com.klasevich.cms.command.command_parameter.UrlPattern.UPLOADING_CONTROLLER;
 
 @WebServlet(urlPatterns = {UPLOADING_CONTROLLER})
 @MultipartConfig(fileSizeThreshold = 1024 * 1024,

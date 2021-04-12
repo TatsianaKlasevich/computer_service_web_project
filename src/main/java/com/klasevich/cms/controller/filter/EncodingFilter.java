@@ -25,7 +25,6 @@ public class EncodingFilter implements Filter {
         }
         chain.doFilter(request, response);
     }
-
     public void destroy() {
         code = null;
     }

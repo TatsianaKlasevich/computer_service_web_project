@@ -1,8 +1,5 @@
 package com.klasevich.cms.model.entity;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 public class User {
     private int id;
     private String name;

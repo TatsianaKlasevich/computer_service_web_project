@@ -10,6 +10,7 @@ public class ComputerService {
 
     public ComputerService() {
     }
+
     public ComputerService(String serviceName, BigDecimal price) {
         this.serviceName = serviceName;
         this.price = price;

@@ -25,7 +25,7 @@
             $('[data-toggle="tooltip"]').tooltip();
         });
     </script>
-    <title><fmt:message key="label.registration.title"/></title>
+    <title>Registration</title>
 </head>
 <body>
 <div class="wrapper">
@@ -49,18 +49,18 @@
                         <div class="row">
                             <label><fmt:message key="label.name"/></label>
                             <input type="text" name="name"
-                                  value="${requestScope.name}"
+                                   value="${requestScope.name}"
                                    pattern="([а-яА-Яa-zA-Z]+){2,30}"
                                    placeholder="<fmt:message key="label.name"/>"
                                    data-toggle="tooltip" data-placement="bottom"
-                                   title= "<fmt:message key="rule.name"/>">
+                                   title="<fmt:message key="rule.name"/>">
                             <fmt:message key="rule.name"/>
                         </div>
                         <div class="row">
                             <label><fmt:message key="label.surname"/></label>
                             <input type="text" name="surname" value="${requestScope.surname}"
                                    placeholder="<fmt:message key="label.surname"/>"
-                                           pattern="([а-яА-Яa-zA-Z]+){2,30}" required
+                                   pattern="([а-яА-Яa-zA-Z]+){2,30}" required
                                    data-toggle="tooltip" data-placement="bottom"
                                    title=<fmt:message key="rule.name"/>>
                             <fmt:message key="rule.name"/>
@@ -86,14 +86,14 @@
                         <div class="row">
                             <label><fmt:message key="label.password"/></label>
                             <input id="password" type="password" name="password" value="${requestScope.password}"
-                                   pattern="(\w+){8,15}"
+                                   pattern="(\w+){8,20"
                                    onchange="this.setCustomValidity(this.validity.patternMismatch ? '<fmt:message
                                            key="rule.password"/>' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;"
                                    placeholder="Password" required>
                         </div>
                         <div class="row">
                             <label><fmt:message key="label.repeat.password"/></label>
-                            <input id="password_two" type="password" name="password_two" value="${requestScope.repeatedPassword}"
+                            <input id="password_two" type="password" name="password_two"
                                    pattern="(\w+){8,20}"
                                    onchange="this.setCustomValidity(this.validity.patternMismatch ? '<fmt:message
                                            key="rule.repeat.password"/>' : '');"
@@ -103,7 +103,7 @@
                             <button type="submit"><fmt:message key="button.register"/></button>
                         </div>
                         <br/>
-                        <p style="color: white">  ${requestScope.messageWarning}</p>
+                        <p style="color: white"> ${requestScope.messageWarning}</p>
                         <br/>
                     </form>
                 </div>

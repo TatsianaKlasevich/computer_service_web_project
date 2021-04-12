@@ -27,7 +27,7 @@
             $('[data-toggle="tooltip"]').tooltip();
         });
     </script>
-    <title><fmt:message key="label.make.order"/></title>
+    <title>Make order</title>
 </head>
 <body>
 <div class="wrapper">
@@ -64,7 +64,7 @@
                 </div>
                 <div class="row">
                     <label><fmt:message key="label.select"/></label>
-                    <select name="categoryName" >
+                    <select name="categoryName">
                         <option value="laptop"><fmt:message key="label.laptop"/></option>
                         <option value="printer"><fmt:message key="label.printer"/></option>
                         <option value="UPS"><fmt:message key="label.ups"/></option>

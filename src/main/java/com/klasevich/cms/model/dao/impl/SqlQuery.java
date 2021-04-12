@@ -7,7 +7,7 @@ public class SqlQuery {
     private SqlQuery() {
     }
 
-    //userDao //todo
+    //orderDao
     @Language("MySQL")
     public static final String SQL_ADD_ORDER = "INSERT INTO orders (appliance_date,issue_date,address,user_id_fk," +
             "status, category_id_fk, problem,has_discount) VALUES (?,?,?,?,?,?,?,?)";
@@ -78,9 +78,6 @@ public class SqlQuery {
             "JOIN categories c on c.category_id = services.category_id_fk " +
             "WHERE order_id_fk=?";
     @Language("MySQL")
-    public static final String SQL_UPDATE_SERVICE = "UPDATE services SET service_name=?,price=?,category_id_fk=? " +
-            "WHERE service_id=?";
-    @Language("MySQL")
     public static final String SQL_FIND_SERVICES_FROM_TO = "SELECT service_id, category, service_name, price " +
             "FROM services,categories WHERE services.category_id_fk=categories.category_id LIMIT ? OFFSET ?";
     @Language("MySQL")
@@ -88,7 +85,7 @@ public class SqlQuery {
     @Language("MySQL")
     public static final String SQL_ADD_SERVICE_TO_ORDER = "INSERT INTO orders_services(order_id_fk, service_id_fk)" +
             " VALUES (?,?) ";
-    //orderDao
+    //userDao
     @Language("MySQL")
     public static final String SQL_FIND_USER_BY_MAIL = "SELECT mail FROM users WHERE mail = ?";
     @Language("MySQL")
@@ -101,8 +98,8 @@ public class SqlQuery {
     public static final String SQL_FIND_USER_BY_MAIL_AND_PASSWORD = "SELECT user_id, user_name, surname, mail, phone, " +
             "avatar, role FROM users WHERE mail = ? AND password = ?";
     @Language("MySQL")
-    public static final String SQL_FIND_USER_BY_PARAMETER = "SELECT user_id, user_name, surname, mail, phone, " +
-            "avatar, role FROM users WHERE user_name = ? OR surname = ? OR phone = ? OR mail =?";
+    public static final String SQL_FIND_USERS_BY_PARAMETER = "SELECT user_id, user_name, surname, mail, phone," +
+            "avatar, role FROM users WHERE user_name = ? OR surname = ? OR phone = ? OR mail =?  LIMIT ? OFFSET ?";
     @Language("MySQL")
     public static final String SQL_ADD_AVATAR = "UPDATE users SET avatar=? WHERE mail=?";
     @Language("MySQL")
@@ -114,6 +111,9 @@ public class SqlQuery {
             " role FROM users LIMIT ? OFFSET ?";
     @Language("MySQL")
     public static final String SQL_SIZE_USERS = "SELECT COUNT(user_id) FROM users";
+    @Language("MySQL")
+    public static final String SQL_SIZE_USERS_BY_PARAMETER = "SELECT COUNT(user_id) FROM users " +
+            "WHERE user_name = ? OR surname = ? OR phone = ? OR mail =?";
     @Language("MySQL")
     public static final String SQL_DELETE_USER_BY_ID = "DELETE FROM users WHERE user_id=?";
 }

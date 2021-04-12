@@ -41,7 +41,7 @@ public class ServiceDaoImpl implements ServiceDao {
     }
 
     @Override
-    public void addServiceToOrder(int orderId,int serviceId) throws DaoException {
+    public void addServiceToOrder(int orderId, int serviceId) throws DaoException {
         try (Connection connection = pool.takeConnection();
              PreparedStatement statement = connection.prepareStatement(SQL_ADD_SERVICE_TO_ORDER)) {
             statement.setInt(1, orderId);
@@ -51,8 +51,9 @@ public class ServiceDaoImpl implements ServiceDao {
             throw new DaoException(e);
         }
     }
+
     @Override
-    public List<ComputerService> findAllServicesByOrderId(int orderId) throws DaoException{
+    public List<ComputerService> findAllServicesByOrderId(int orderId) throws DaoException {
         logger.debug("orderId in dao {}", orderId);
         try (Connection connection = pool.takeConnection();
              PreparedStatement statement = connection.prepareStatement(SQL_FIND_ALL_SERVICES_BY_ORDER_ID)) {
@@ -67,7 +68,6 @@ public class ServiceDaoImpl implements ServiceDao {
         } catch (SQLException e) {
             throw new DaoException(e);
         }
-
     }
 
     @Override
@@ -140,32 +140,13 @@ public class ServiceDaoImpl implements ServiceDao {
     }
 
     @Override
-    public boolean updateService(ComputerService computerService) throws DaoException {
-        logger.debug("service in dao {}", computerService);
-        int serviceId = computerService.getId();
-        String serviceName = computerService.getServiceName();
-        BigDecimal price = computerService.getPrice();
-        int categoryId = computerService.getCategory().ordinal() + 1;
-        try (Connection connection = pool.takeConnection();
-             PreparedStatement statement = connection.prepareStatement(SQL_UPDATE_SERVICE)) {
-            statement.setString(1, serviceName);
-            statement.setBigDecimal(2, price);
-            statement.setInt(3, categoryId);
-            statement.setInt(4, serviceId);
-            return statement.executeUpdate() > 0;
-        } catch (SQLException e) {
-            throw new DaoException(e);
-        }
-    }
-
-    @Override
-    public List<ComputerService> findServicesByPageNumber(int pageNumber, int limit) throws DaoException{
+    public List<ComputerService> findServicesByPageNumber(int pageNumber, int limit) throws DaoException {
         try (Connection connection = pool.takeConnection();
              PreparedStatement statement = connection.prepareStatement(SQL_FIND_SERVICES_FROM_TO)) {
-            int offset = pageNumber*limit - limit;
+            int offset = pageNumber * limit - limit;
             List<ComputerService> services = new ArrayList<>();
             statement.setInt(1, limit);
-            statement.setInt(2,offset);
+            statement.setInt(2, offset);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 services.add(convertInService(resultSet));
@@ -182,9 +163,9 @@ public class ServiceDaoImpl implements ServiceDao {
         try (Connection connection = pool.takeConnection();
              PreparedStatement statement = connection.prepareStatement(SQL_SIZE_SERVICES)) {
             ResultSet resultSet = statement.executeQuery();
-            int size=0;
+            int size = 0;
             if (resultSet.next()) {
-                size=resultSet.getInt(1);
+                size = resultSet.getInt(1);
             }
             return size;
         } catch (SQLException e) {

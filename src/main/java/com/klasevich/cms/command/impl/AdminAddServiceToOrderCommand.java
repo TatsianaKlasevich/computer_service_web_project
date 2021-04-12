@@ -15,9 +15,9 @@ import java.util.List;
 
 import static com.klasevich.cms.command.CommandResult.Type.FORWARD;
 import static com.klasevich.cms.command.CommandResult.Type.REDIRECT;
-import static com.klasevich.cms.command.PagePath.*;
-import static com.klasevich.cms.command.RequestParameter.*;
-import static com.klasevich.cms.command.UrlPattern.TO_FIND_ORDER_BY_ID_COMMAND;
+import static com.klasevich.cms.command.command_parameter.PagePath.*;
+import static com.klasevich.cms.command.command_parameter.RequestParameter.*;
+import static com.klasevich.cms.command.command_parameter.UrlPattern.TO_FIND_ORDER_BY_ID_COMMAND;
 
 public class AdminAddServiceToOrderCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
@@ -43,7 +43,7 @@ public class AdminAddServiceToOrderCommand implements Command {
         if (serviceId2 != null && !serviceId2.isBlank()) {
             services.add(serviceId2);
         }
-        if (serviceId3 != null&& !serviceId3.isBlank()) {
+        if (serviceId3 != null && !serviceId3.isBlank()) {
             services.add(serviceId3);
         }
         logger.debug("services in command {}", services);
@@ -51,7 +51,7 @@ public class AdminAddServiceToOrderCommand implements Command {
             commandService.addServiceToOrder(orderId, services);
         } catch (ServiceException e) {
             logger.error(e);
-            commandResult=new CommandResult(ERROR_500, FORWARD);
+            commandResult = new CommandResult(ERROR_500, FORWARD);
         }
         return commandResult;
     }

@@ -30,18 +30,18 @@
                     <td> ${order.problem}</td>
                     <td> ${order.status}</td>
                     <td>
-                        <form method="get" action="controller">
+                        <form method="post" action="controller">
                             <input type="hidden" name="command" value="find_order_by_id">
                             <input type="hidden" name="order_id" value="${order.id}">
                             <button type="submit"><fmt:message key="button.change"/></button>
                         </form>
 
-                        <form method="get" action="controller" >
+                        <form method="post" action="controller">
                             <input type="hidden" name="command" value="remove_order">
                             <input type="hidden" name="order_id" value="${order.id}">
                             <input type="hidden" name="status" value="${order.status}">
                             <input type="hidden" name="pageNumber" value="${requestScope.pageNumber}">
-                            <button  type="submit"><fmt:message key="button.remove"/></button>
+                            <button type="submit"><fmt:message key="button.remove"/></button>
                         </form>
                     </td>
                 </tr>

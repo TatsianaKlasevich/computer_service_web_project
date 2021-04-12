@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 import java.util.Locale;
 import java.util.Map;
 
-import static com.klasevich.cms.command.RequestParameter.*;
+import static com.klasevich.cms.command.command_parameter.RequestParameter.*;
 
 public class ComputerServiceFactory extends AbstractFactory<ComputerService> {
     @Override

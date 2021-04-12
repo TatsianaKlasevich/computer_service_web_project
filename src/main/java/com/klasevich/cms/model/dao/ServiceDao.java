@@ -17,8 +17,6 @@ public interface ServiceDao {
 
     Optional<ComputerService> findServiceById(int id) throws DaoException;
 
-    boolean updateService(ComputerService computerService) throws DaoException;
-
     List<ComputerService> findServicesByPageNumber(int pageNumber, int limit) throws DaoException;
 
     int sizeServices() throws DaoException;

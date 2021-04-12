@@ -21,7 +21,7 @@ public class ValidationRegexPattern {
     public static final String SEPARATOR_BEFORE = "\\\\";
     public static final String SEPARATOR_AFTER = "/";
     public static final String SEPARATOR_NEW = "//";
-    public static final String FIRST_SEPARATOR="-";
-    public static final String SECOND_SEPARATOR=".";
+    public static final String FIRST_SEPARATOR = "-";
+    public static final String SECOND_SEPARATOR = ".";
     public static final Pattern PAGE_REGEX = Pattern.compile("(/[0-9a-z_]+)(/[a-z_]+/[a-z_]+\\.jsp)");
 }

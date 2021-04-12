@@ -2,7 +2,7 @@ package com.klasevich.cms.command.impl;
 
 import com.klasevich.cms.command.Command;
 import com.klasevich.cms.command.CommandResult;
-import com.klasevich.cms.command.RequestParameter;
+import com.klasevich.cms.command.command_parameter.RequestParameter;
 import com.klasevich.cms.model.service.impl.CommandServiceImpl;
 import com.klasevich.cms.util.MessageManager;
 import org.apache.logging.log4j.LogManager;
@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import static com.klasevich.cms.command.CommandResult.Type.REDIRECT;
-import static com.klasevich.cms.command.PagePath.MAIL;
-import static com.klasevich.cms.command.RequestAttribute.*;
+import static com.klasevich.cms.command.command_parameter.PagePath.MAIL;
+import static com.klasevich.cms.command.command_parameter.RequestAttribute.*;
 
 public class MailCommand implements Command {
     private static final Logger logger = LogManager.getLogger();

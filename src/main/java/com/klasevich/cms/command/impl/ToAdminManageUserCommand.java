@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import static com.klasevich.cms.command.CommandResult.Type.FORWARD;
-import static com.klasevich.cms.command.PagePath.ADMIN_MANAGE_USER;
+import static com.klasevich.cms.command.command_parameter.PagePath.ADMIN_MANAGE_USER;
 
 public class ToAdminManageUserCommand implements Command {
     @Override

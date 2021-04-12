@@ -33,9 +33,9 @@ public class OrderDaoImpl implements OrderDao {
         logger.debug("statusId {}", statusId);
         int categoryId = order.getCategory().ordinal() + 1;
         String problem = order.getProblem();
-        byte hasDiscount=0;
-        if(order.isHasDiscount()){
-            hasDiscount=1;
+        byte hasDiscount = 0;
+        if (order.isHasDiscount()) {
+            hasDiscount = 1;
         }
         try (Connection connection = pool.takeConnection();
              PreparedStatement statement = connection.prepareStatement(SQL_ADD_ORDER, Statement.RETURN_GENERATED_KEYS)) {
@@ -86,8 +86,9 @@ public class OrderDaoImpl implements OrderDao {
             throw new DaoException(e);
         }
     }
+
     @Override
-    public boolean deleteServiceByOrderId(int serviceId,int orderId) throws DaoException {
+    public boolean deleteServiceByOrderId(int serviceId, int orderId) throws DaoException {
         try (Connection connection = pool.takeConnection();
              PreparedStatement statement = connection.prepareStatement(SQL_DELETE_SERVICE_BY_ORDER_ID)) {
             statement.setInt(1, orderId);
@@ -101,38 +102,38 @@ public class OrderDaoImpl implements OrderDao {
     @Override
     public boolean updateOrderStatus(Status status, int orderId) throws DaoException {
         try (Connection connection = pool.takeConnection();
-             PreparedStatement statement = connection.prepareStatement(SQL_UPDATE_ORDER_STATUS)){
-            int statusId=status.ordinal()+1;
+             PreparedStatement statement = connection.prepareStatement(SQL_UPDATE_ORDER_STATUS)) {
+            int statusId = status.ordinal() + 1;
             statement.setInt(1, statusId);
-            statement.setInt(2,orderId);
-            return statement.executeUpdate()>0;
+            statement.setInt(2, orderId);
+            return statement.executeUpdate() > 0;
         } catch (SQLException e) {
             throw new DaoException(e);
         }
     }
 
     @Override
-    public boolean updateOrderStatusAndIssueDate(Status status, LocalDate issueDate,int orderId) throws DaoException {
+    public boolean updateOrderStatusAndIssueDate(Status status, LocalDate issueDate, int orderId) throws DaoException {
         try (Connection connection = pool.takeConnection();
-             PreparedStatement statement = connection.prepareStatement(SQL_UPDATE_ORDER_STATUS_AND_ISSUE_DATE)){
-            int statusId=status.ordinal()+1;
+             PreparedStatement statement = connection.prepareStatement(SQL_UPDATE_ORDER_STATUS_AND_ISSUE_DATE)) {
+            int statusId = status.ordinal() + 1;
             statement.setInt(1, statusId);
-            statement.setDate(2,Date.valueOf(issueDate));
-            statement.setInt(3,orderId);
-            return statement.executeUpdate()>0;
+            statement.setDate(2, Date.valueOf(issueDate));
+            statement.setInt(3, orderId);
+            return statement.executeUpdate() > 0;
         } catch (SQLException e) {
             throw new DaoException(e);
         }
     }
 
     @Override
-    public List<Order> findOrdersByPageNumber(int pageNumber, int limit) throws DaoException{
+    public List<Order> findOrdersByPageNumber(int pageNumber, int limit) throws DaoException {
         try (Connection connection = pool.takeConnection();
              PreparedStatement statement = connection.prepareStatement(SQL_FIND_ORDERS_FROM_TO)) {
-            int offset = pageNumber*limit - limit;
+            int offset = pageNumber * limit - limit;
             List<Order> orders = new ArrayList<>();
             statement.setInt(1, limit);
-            statement.setInt(2,offset);
+            statement.setInt(2, offset);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 orders.add(convertInOrder(resultSet));
@@ -145,16 +146,16 @@ public class OrderDaoImpl implements OrderDao {
     }
 
     @Override
-    public List<Order> findOrdersByCategoryAndPageNumber(Category category,int pageNumber, int limit)
+    public List<Order> findOrdersByCategoryAndPageNumber(Category category, int pageNumber, int limit)
             throws DaoException {
         try (Connection connection = pool.takeConnection();
              PreparedStatement statement = connection.prepareStatement(SQL_FIND_ORDERS_BY_CATEGORY_FROM_TO)) {
-            int offset = pageNumber*limit - limit;
+            int offset = pageNumber * limit - limit;
             List<Order> orders = new ArrayList<>();
-            int categoryId=category.ordinal()+1;
+            int categoryId = category.ordinal() + 1;
             statement.setInt(1, categoryId);
             statement.setInt(2, limit);
-            statement.setInt(3,offset);
+            statement.setInt(3, offset);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 orders.add(convertInOrder(resultSet));
@@ -167,16 +168,16 @@ public class OrderDaoImpl implements OrderDao {
     }
 
     @Override
-    public List<Order> findOrdersByStatusAndPageNumber(Status status,int pageNumber, int limit)
+    public List<Order> findOrdersByStatusAndPageNumber(Status status, int pageNumber, int limit)
             throws DaoException {
         try (Connection connection = pool.takeConnection();
              PreparedStatement statement = connection.prepareStatement(SQL_FIND_ORDERS_BY_STATUS_FROM_TO)) {
-            int offset = pageNumber*limit - limit;
+            int offset = pageNumber * limit - limit;
             List<Order> orders = new ArrayList<>();
-            String statusString=status.toString().toLowerCase(Locale.ROOT);
+            String statusString = status.toString().toLowerCase(Locale.ROOT);
             statement.setString(1, statusString);
             statement.setInt(2, limit);
-            statement.setInt(3,offset);
+            statement.setInt(3, offset);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 orders.add(convertInOrder(resultSet));
@@ -187,17 +188,18 @@ public class OrderDaoImpl implements OrderDao {
             throw new DaoException(e);
         }
     }
+
     @Override
-    public List<Order> findOrdersAfterDateOnPageNumber(LocalDate applianceDate,int pageNumber, int limit)
+    public List<Order> findOrdersAfterDateOnPageNumber(LocalDate applianceDate, int pageNumber, int limit)
             throws DaoException {
         try (Connection connection = pool.takeConnection();
              PreparedStatement statement = connection.prepareStatement(SQL_FIND_ORDERS_AFTER_DATE_FROM_TO)) {
-            int offset = pageNumber*limit - limit;
+            int offset = pageNumber * limit - limit;
             List<Order> orders = new ArrayList<>();
             logger.debug("date in dao {}", Date.valueOf(applianceDate));
             statement.setDate(1, Date.valueOf(applianceDate));
             statement.setInt(2, limit);
-            statement.setInt(3,offset);
+            statement.setInt(3, offset);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 orders.add(convertInOrder(resultSet));
@@ -214,40 +216,42 @@ public class OrderDaoImpl implements OrderDao {
         try (Connection connection = pool.takeConnection();
              PreparedStatement statement = connection.prepareStatement(SQL_SIZE_ORDERS)) {
             ResultSet resultSet = statement.executeQuery();
-            int size=0;
+            int size = 0;
             if (resultSet.next()) {
-                size=resultSet.getInt(1);
+                size = resultSet.getInt(1);
             }
             return size;
         } catch (SQLException e) {
             throw new DaoException(e);
         }
     }
+
     @Override
     public int sizeOrdersByCategory(Category category) throws DaoException {
         try (Connection connection = pool.takeConnection();
              PreparedStatement statement = connection.prepareStatement(SQL_SIZE_ORDERS_BY_CATEGORY)) {
-            int categoryId=category.ordinal()+1;
+            int categoryId = category.ordinal() + 1;
             statement.setInt(1, categoryId);
             ResultSet resultSet = statement.executeQuery();
-            int size=0;
+            int size = 0;
             if (resultSet.next()) {
-                size=resultSet.getInt(1);
+                size = resultSet.getInt(1);
             }
             return size;
         } catch (SQLException e) {
             throw new DaoException(e);
         }
     }
+
     @Override
     public int sizeOrdersAfterDate(LocalDate applianceDate) throws DaoException {
         try (Connection connection = pool.takeConnection();
              PreparedStatement statement = connection.prepareStatement(SQL_SIZE_ORDERS_AFTER_DATE)) {
             statement.setDate(1, Date.valueOf(applianceDate));
             ResultSet resultSet = statement.executeQuery();
-            int size=0;
+            int size = 0;
             if (resultSet.next()) {
-                size=resultSet.getInt(1);
+                size = resultSet.getInt(1);
             }
             return size;
         } catch (SQLException e) {
@@ -259,12 +263,12 @@ public class OrderDaoImpl implements OrderDao {
     public int sizeOrdersByStatus(Status status) throws DaoException {
         try (Connection connection = pool.takeConnection();
              PreparedStatement statement = connection.prepareStatement(SQL_SIZE_ORDERS_BY_STATUS)) {
-            String statusString=status.toString().toLowerCase(Locale.ROOT);
+            String statusString = status.toString().toLowerCase(Locale.ROOT);
             statement.setString(1, statusString);
             ResultSet resultSet = statement.executeQuery();
-            int size=0;
+            int size = 0;
             if (resultSet.next()) {
-                size=resultSet.getInt(1);
+                size = resultSet.getInt(1);
             }
             return size;
         } catch (SQLException e) {
@@ -305,10 +309,10 @@ public class OrderDaoImpl implements OrderDao {
             logger.debug("category {}", resultSet.getString(5).toUpperCase(Locale.ROOT));
             order.setCategory(Category.valueOf(resultSet.getString(5).toUpperCase(Locale.ROOT)));
             Optional<User> optionalUser = dao.findUserById(resultSet.getInt(6));
-            logger.debug("optional user {}",optionalUser);
+            logger.debug("optional user {}", optionalUser);
             order.setAddress(resultSet.getString(7));
             order.setStatus(Status.valueOf(resultSet.getString(8).toUpperCase(Locale.ROOT)));
-            boolean hasDiscount= resultSet.getByte(9) != 0;
+            boolean hasDiscount = resultSet.getByte(9) != 0;
             order.setHasDiscount(hasDiscount);
             if (optionalUser.isPresent()) {
                 User user = optionalUser.get();

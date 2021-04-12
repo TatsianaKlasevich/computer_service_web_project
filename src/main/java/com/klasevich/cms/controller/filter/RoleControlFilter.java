@@ -14,10 +14,10 @@ import javax.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-import static com.klasevich.cms.command.PagePath.ERROR_404;
-import static com.klasevich.cms.command.RequestParameter.COMMAND;
-import static com.klasevich.cms.command.SessionAttribute.USER;
-import static com.klasevich.cms.command.UrlPattern.CONTROLLER;
+import static com.klasevich.cms.command.command_parameter.PagePath.ERROR_404;
+import static com.klasevich.cms.command.command_parameter.RequestParameter.COMMAND;
+import static com.klasevich.cms.command.command_parameter.SessionAttribute.USER;
+import static com.klasevich.cms.command.command_parameter.UrlPattern.CONTROLLER;
 
 @WebFilter(urlPatterns = {CONTROLLER})
 public class RoleControlFilter implements Filter {

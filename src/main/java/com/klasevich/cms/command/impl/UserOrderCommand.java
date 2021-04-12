@@ -2,7 +2,7 @@ package com.klasevich.cms.command.impl;
 
 import com.klasevich.cms.command.Command;
 import com.klasevich.cms.command.CommandResult;
-import com.klasevich.cms.command.SessionAttribute;
+import com.klasevich.cms.command.command_parameter.SessionAttribute;
 import com.klasevich.cms.model.entity.Order;
 import com.klasevich.cms.model.entity.User;
 import com.klasevich.cms.model.service.ServiceException;
@@ -17,8 +17,8 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 import static com.klasevich.cms.command.CommandResult.Type.FORWARD;
-import static com.klasevich.cms.command.PagePath.*;
-import static com.klasevich.cms.command.RequestAttribute.*;
+import static com.klasevich.cms.command.command_parameter.PagePath.*;
+import static com.klasevich.cms.command.command_parameter.RequestAttribute.*;
 
 public class UserOrderCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
@@ -44,7 +44,7 @@ public class UserOrderCommand implements Command {
             }
         } catch (ServiceException e) {
             logger.error(e);
-            commandResult=new CommandResult(ERROR_500, FORWARD);
+            commandResult = new CommandResult(ERROR_500, FORWARD);
         }
         return commandResult;
     }

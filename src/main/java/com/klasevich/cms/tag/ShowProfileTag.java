@@ -1,6 +1,6 @@
 package com.klasevich.cms.tag;
 
-import com.klasevich.cms.command.SessionAttribute;
+import com.klasevich.cms.command.command_parameter.SessionAttribute;
 import com.klasevich.cms.model.entity.Role;
 import com.klasevich.cms.model.entity.User;
 

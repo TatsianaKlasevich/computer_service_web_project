@@ -28,7 +28,7 @@
             $('[data-toggle="tooltip"]').tooltip();
         });
     </script>
-    <title><fmt:message key="label.service.table"/></title>
+    <title>Admin order</title>
 </head>
 <body>
 <div class="wrapper">

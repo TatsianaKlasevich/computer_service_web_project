@@ -14,7 +14,7 @@
 <head>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/media-queries.css" type="text/css">
-    <title><fmt:message key="label.service"/></title>
+    <title>Services</title>
 </head>
 <body>
 <div class="wrapper">
@@ -27,7 +27,7 @@
                     <h3><fmt:message key="label.service"/></h3>
                     <ul class="list1">
                         <li>
-                            <form method="get" action="controller">
+                            <form method="post" action="controller">
                                 <input type="hidden" name="command" value="show_category_services"/>
                                 <input type="hidden" name="categoryName" value="laptop"/>
                                 <img src="${pageContext.request.contextPath}/images/laptop1.jpeg" alt="laptop"/>
@@ -39,7 +39,7 @@
                             </form>
                         </li>
                         <li>
-                            <form method="get" action="controller">
+                            <form method="post" action="controller">
                                 <input type="hidden" name="command" value="show_category_services"/>
                                 <input type="hidden" name="categoryName" value="printer"/>
                                 <img src="${pageContext.request.contextPath}/images/printer1.jpg" alt="printer"/>
@@ -50,7 +50,7 @@
                                 </div>
                             </form>
                         <li>
-                            <form method="get" action="controller">
+                            <form method="post" action="controller">
                                 <input type="hidden" name="command" value="show_category_services"/>
                                 <input type="hidden" name="categoryName" value="ups"/>
                                 <img src="${pageContext.request.contextPath}/images/ups1.jpg" alt="UPS"/>

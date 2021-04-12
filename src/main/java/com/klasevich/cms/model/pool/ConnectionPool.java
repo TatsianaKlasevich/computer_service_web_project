@@ -57,7 +57,7 @@ public class ConnectionPool {
         }
     }
 
-    public static ConnectionPool getInstance() {//todo
+    public static ConnectionPool getInstance() {
         if (!connectionCreated.get()) {
             lock.lock();
             try {
@@ -65,7 +65,6 @@ public class ConnectionPool {
                     instance = new ConnectionPool();
                 }
                 connectionCreated.set(true);
-
             } finally {
                 lock.unlock();
             }
@@ -142,11 +141,11 @@ public class ConnectionPool {
         }
     }
 
-    public void closeConnection (Connection connection, Statement statement, ResultSet... resultSets) {
+    public void closeConnection(Connection connection, Statement statement, ResultSet... resultSets) {
         try {
             if (resultSets.length != 0) {
-                for (int i = 0; i < resultSets.length; i++) {
-                    resultSets[i].close();
+                for (ResultSet resultSet : resultSets) {
+                    resultSet.close();
                 }
             }
         } catch (SQLException e) {
@@ -171,11 +170,11 @@ public class ConnectionPool {
     private class ProxyConnection implements Connection {
         private Connection connection;
 
-        ProxyConnection(Connection connection) throws SQLException {
+        ProxyConnection(Connection connection) {
             this.connection = connection;
         }
 
-         void reallyClose() throws SQLException {
+        void reallyClose() throws SQLException {
             connection.close();
         }
 

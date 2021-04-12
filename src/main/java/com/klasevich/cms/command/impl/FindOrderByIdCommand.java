@@ -20,16 +20,14 @@ import java.util.List;
 import java.util.Optional;
 
 import static com.klasevich.cms.command.CommandResult.Type.FORWARD;
-import static com.klasevich.cms.command.PagePath.*;
-import static com.klasevich.cms.command.RequestAttribute.*;
-import static com.klasevich.cms.command.RequestParameter.*;
+import static com.klasevich.cms.command.command_parameter.OtherParameter.*;
+import static com.klasevich.cms.command.command_parameter.PagePath.*;
+import static com.klasevich.cms.command.command_parameter.RequestAttribute.*;
+import static com.klasevich.cms.command.command_parameter.RequestParameter.*;
 import static java.math.RoundingMode.HALF_UP;
 
 public class FindOrderByIdCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
-    private static final String PERCENT_WITHOUT_DISCOUNT = "0%";
-    private static final String PERCENT_WITH_DISCOUNT = "15%";
-    private static final Double BIG_DECIMAL_PERCENT = 0.85;
 
     private OrderServiceImpl orderService;
     private CommandServiceImpl commandService;
@@ -85,7 +83,7 @@ public class FindOrderByIdCommand implements Command {
             commandResult = new CommandResult(ADMIN_MANAGE_ORDER, FORWARD);
         } catch (ServiceException e) {
             logger.error(e);
-            commandResult=new CommandResult(ERROR_500, FORWARD);
+            commandResult = new CommandResult(ERROR_500, FORWARD);
         }
         return commandResult;
     }

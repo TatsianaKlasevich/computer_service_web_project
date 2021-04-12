@@ -15,11 +15,11 @@ import java.util.Locale;
 
 import static com.klasevich.cms.command.CommandResult.Type.FORWARD;
 import static com.klasevich.cms.command.CommandResult.Type.REDIRECT;
-import static com.klasevich.cms.command.PagePath.*;
-import static com.klasevich.cms.command.RequestAttribute.*;
-import static com.klasevich.cms.command.RequestParameter.DATE;
-import static com.klasevich.cms.command.RequestParameter.ORDER_ID;
-import static com.klasevich.cms.command.UrlPattern.TO_FIND_ORDER_BY_ID_COMMAND;
+import static com.klasevich.cms.command.command_parameter.PagePath.*;
+import static com.klasevich.cms.command.command_parameter.RequestAttribute.*;
+import static com.klasevich.cms.command.command_parameter.RequestParameter.DATE;
+import static com.klasevich.cms.command.command_parameter.RequestParameter.ORDER_ID;
+import static com.klasevich.cms.command.command_parameter.UrlPattern.TO_FIND_ORDER_BY_ID_COMMAND;
 
 public class ChangeAdminOrderCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
@@ -33,23 +33,22 @@ public class ChangeAdminOrderCommand implements Command {
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {
         CommandResult commandResult = new CommandResult(ADMIN_MANAGE_ORDER, FORWARD);
-        int orderId=Integer.parseInt(request.getParameter(ORDER_ID));
+        int orderId = Integer.parseInt(request.getParameter(ORDER_ID));
         logger.debug("orderId {}", orderId);
-        String statusString=request.getParameter(STATUS);
-        Status status=Status.valueOf(statusString.toUpperCase(Locale.ROOT));
+        String statusString = request.getParameter(STATUS);
+        Status status = Status.valueOf(statusString.toUpperCase(Locale.ROOT));
         String date = request.getParameter(DATE);
         logger.debug("date in command {}", date);
 
         try {
-            if (service.changeOrderStatusAndIssueDate(status,date, orderId)){
+            if (service.changeOrderStatusAndIssueDate(status, date, orderId)) {
                 commandResult = new CommandResult(TO_FIND_ORDER_BY_ID_COMMAND + orderId, REDIRECT);
-            }
-            else {
-                request.setAttribute(MESSAGE_WARNING,MessageManager.getProperty("message.status.not.changed"));
+            } else {
+                request.setAttribute(MESSAGE_WARNING, MessageManager.getProperty("message.status.not.changed"));
             }
         } catch (ServiceException e) {
             logger.error(e);
-            commandResult=new CommandResult(ERROR_500, FORWARD);
+            commandResult = new CommandResult(ERROR_500, FORWARD);
         }
         return commandResult;
     }

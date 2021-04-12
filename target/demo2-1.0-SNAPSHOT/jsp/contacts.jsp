@@ -34,7 +34,7 @@
                         <li><a href> +375 44 100 00 01</a></li>
                         <li><a href> +375 25 100 00 01</a></li>
                         <li><a href> info@kl-service.com</a></li>
-                        <li><a href> <fmt:message key="label.working.hours"/>  10.00-18.00</a></li>
+                        <li><a href> <fmt:message key="label.working.hours"/> 10.00-18.00</a></li>
                     </ul>
                 </div>
                 <div class="map-location">

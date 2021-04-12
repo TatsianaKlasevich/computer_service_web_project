@@ -14,15 +14,15 @@ import javax.servlet.http.HttpServletResponse;
 import java.time.format.DateTimeParseException;
 import java.util.List;
 
+import static com.klasevich.cms.command.command_parameter.OtherParameter.LIMIT;
 import static com.klasevich.cms.command.CommandResult.Type.FORWARD;
-import static com.klasevich.cms.command.PagePath.*;
-import static com.klasevich.cms.command.RequestAttribute.*;
-import static com.klasevich.cms.command.RequestParameter.DATE;
-import static com.klasevich.cms.command.RequestParameter.PAGE_NUMBER;
+import static com.klasevich.cms.command.command_parameter.PagePath.*;
+import static com.klasevich.cms.command.command_parameter.RequestAttribute.*;
+import static com.klasevich.cms.command.command_parameter.RequestParameter.DATE;
+import static com.klasevich.cms.command.command_parameter.RequestParameter.PAGE_NUMBER;
 
 public class FindOrdersAfterDateCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
-    private static final int LIMIT = 4;
 
     private OrderServiceImpl service;
 
@@ -38,7 +38,6 @@ public class FindOrdersAfterDateCommand implements Command {
             int pageNumber = request.getParameter(PAGE_NUMBER) != null ?
                     Integer.parseInt(request.getParameter(PAGE_NUMBER)) : 1;
             logger.debug("page from request is {}", pageNumber);
-
             List<Order> orders = service.findOrdersAfterDateOnPageNumber(date, pageNumber, LIMIT);
             int sizeOfAllOrdersAfterDate = service.sizeOrdersAfterDate(date);
             int lastPage = (int) Math.ceil((double) sizeOfAllOrdersAfterDate / LIMIT);
@@ -51,8 +50,19 @@ public class FindOrdersAfterDateCommand implements Command {
                 request.setAttribute(ORDERS, orders);
                 request.setAttribute(DATE, date);
             } else {
-                request.setAttribute(MESSAGE_WARNING, MessageManager.getProperty("message.find.order.error"));
-                commandResult = new CommandResult(ADMIN_MANAGE_ORDER, FORWARD);
+                pageNumber = pageNumber - 1;
+                if (pageNumber >= 1) {
+                    List<Order> ordersNew = service.findOrdersAfterDateOnPageNumber(date, pageNumber, LIMIT);
+                    int sizeOfAllOrdersAfterDateNew = service.sizeOrdersAfterDate(date);
+                    int lastPageNew = (int) Math.ceil((double) sizeOfAllOrdersAfterDateNew / LIMIT);
+                    request.setAttribute(PAGE_NUMBER, pageNumber);
+                    request.setAttribute(IS_LAST_PAGE, lastPageNew == pageNumber);
+                    request.setAttribute(ORDERS, ordersNew);
+                    request.setAttribute(DATE, date);
+                } else {
+                    request.setAttribute(MESSAGE_WARNING, MessageManager.getProperty("message.find.order.error"));
+                    commandResult = new CommandResult(ADMIN_MANAGE_ORDER, FORWARD);
+                }
             }
         } catch (DateTimeParseException e) {
             logger.error(e);

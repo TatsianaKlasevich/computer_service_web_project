@@ -13,7 +13,7 @@
 <head>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/login.css" type="text/css" media="screen">
-    <title><fmt:message key="label.login.title"/></title>
+    <title>Log in</title>
 </head>
 <body>
 <div class="wrapper">
@@ -27,9 +27,9 @@
                     <p style="color: white">
                     <h3>${requestScope.name} ${requestScope.surname}${requestScope.welcomePage}</h3></p>
                     <br/>
-                    <p style="color: white"> ${requestScope.errorLoginPassMessage}</p>
+                    <p style="color: white"> ${requestScope.messageWarning}</p>
                     <br/>
-                    <form method="POST" action="controller">
+                    <form method="post" action="controller">
                         <input type="hidden" name="command" value="login"/>
                         <fieldset class="clearfix">
                             <p><span class="fontawesome-user"></span>

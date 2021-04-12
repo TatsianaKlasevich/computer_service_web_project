@@ -11,6 +11,8 @@
 <fmt:setBundle basename="resource.pagecontent"/>
 
 <link href="${pageContext.request.contextPath}/css/error_500.css" rel="stylesheet">
+<html>
+<head><title>Error Page</title></head>
 
 <div class="page-500">
     <div class="outer">
