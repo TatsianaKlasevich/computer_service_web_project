@@ -86,7 +86,7 @@
                         <div class="row">
                             <label><fmt:message key="label.password"/></label>
                             <input id="password" type="password" name="password" value="${requestScope.password}"
-                                   pattern="(\w+){8,20"
+                                   pattern="[\w\p{Punct}]+){8,20}"
                                    onchange="this.setCustomValidity(this.validity.patternMismatch ? '<fmt:message
                                            key="rule.password"/>' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;"
                                    placeholder="Password" required>
@@ -94,7 +94,7 @@
                         <div class="row">
                             <label><fmt:message key="label.repeat.password"/></label>
                             <input id="password_two" type="password" name="password_two"
-                                   pattern="(\w+){8,20}"
+                                   pattern="[\w\p{Punct}]+){8,20}"
                                    onchange="this.setCustomValidity(this.validity.patternMismatch ? '<fmt:message
                                            key="rule.repeat.password"/>' : '');"
                                    placeholder="Password" required>

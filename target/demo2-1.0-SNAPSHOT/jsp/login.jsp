@@ -37,7 +37,7 @@
                                        pattern="([-\w]+){4,30}@[a-zA-Z]+\.[a-zA-Z]{2,3}">
                             <p><span class="fontawesome-lock"></span>
                                 <input id="password" type="password" name="password" value="password"
-                                       pattern="(\w+){8,15}">
+                                       pattern="([\w\p{Punct}]+){8,20}">
                             <p><input type="submit" value=<fmt:message key="button.login"/>></p>
                         </fieldset>
                     </form>

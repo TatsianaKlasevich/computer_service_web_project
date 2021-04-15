@@ -22,3 +22,198 @@
 2021-04-12 18:25:33 [main] DEBUG GeneralValidator - false
 2021-04-12 18:25:33 [main] DEBUG GeneralValidator - is valid pass true
 2021-04-12 18:25:33 [main] DEBUG GeneralValidator - is valid repeated pass false
+2021-04-12 21:45:26 [main] DEBUG GeneralValidator - true
+2021-04-12 21:45:26 [main] DEBUG GeneralValidator - false
+2021-04-12 21:45:26 [main] DEBUG GeneralValidator - false
+2021-04-12 21:45:26 [main] DEBUG GeneralValidator - false
+2021-04-12 21:51:08 [main] DEBUG GeneralValidator - true
+2021-04-12 21:51:08 [main] DEBUG GeneralValidator - false
+2021-04-12 21:51:08 [main] DEBUG GeneralValidator - false
+2021-04-12 21:51:08 [main] DEBUG GeneralValidator - false
+2021-04-12 21:52:35 [main] DEBUG GeneralValidator - true
+2021-04-12 21:52:35 [main] DEBUG GeneralValidator - false
+2021-04-12 21:52:35 [main] DEBUG GeneralValidator - false
+2021-04-12 21:52:35 [main] DEBUG GeneralValidator - false
+2021-04-12 21:53:12 [main] DEBUG GeneralValidator - false
+2021-04-12 21:53:12 [main] DEBUG GeneralValidator - false
+2021-04-12 21:53:12 [main] DEBUG GeneralValidator - false
+2021-04-12 21:53:12 [main] DEBUG GeneralValidator - false
+2021-04-12 21:54:56 [main] DEBUG GeneralValidator - false
+2021-04-12 21:54:56 [main] DEBUG GeneralValidator - false
+2021-04-12 21:54:56 [main] DEBUG GeneralValidator - false
+2021-04-12 21:54:56 [main] DEBUG GeneralValidator - false
+2021-04-12 22:01:47 [main] DEBUG GeneralValidator - false
+2021-04-12 22:01:47 [main] DEBUG GeneralValidator - false
+2021-04-12 22:01:47 [main] DEBUG GeneralValidator - false
+2021-04-12 22:01:47 [main] DEBUG GeneralValidator - false
+2021-04-12 22:02:20 [main] DEBUG GeneralValidator - false
+2021-04-12 22:02:20 [main] DEBUG GeneralValidator - false
+2021-04-12 22:02:20 [main] DEBUG GeneralValidator - false
+2021-04-12 22:02:20 [main] DEBUG GeneralValidator - false
+2021-04-12 22:04:21 [main] DEBUG GeneralValidator - false
+2021-04-12 22:04:21 [main] DEBUG GeneralValidator - false
+2021-04-12 22:04:21 [main] DEBUG GeneralValidator - false
+2021-04-12 22:04:21 [main] DEBUG GeneralValidator - false
+2021-04-12 22:05:15 [main] DEBUG GeneralValidator - false
+2021-04-12 22:05:15 [main] DEBUG GeneralValidator - false
+2021-04-12 22:05:15 [main] DEBUG GeneralValidator - false
+2021-04-12 22:05:15 [main] DEBUG GeneralValidator - false
+2021-04-12 22:06:44 [main] DEBUG GeneralValidator - false
+2021-04-12 22:06:44 [main] DEBUG GeneralValidator - false
+2021-04-12 22:06:44 [main] DEBUG GeneralValidator - false
+2021-04-12 22:06:44 [main] DEBUG GeneralValidator - false
+2021-04-12 22:07:36 [main] DEBUG GeneralValidator - false
+2021-04-12 22:07:36 [main] DEBUG GeneralValidator - false
+2021-04-12 22:07:36 [main] DEBUG GeneralValidator - false
+2021-04-12 22:07:36 [main] DEBUG GeneralValidator - false
+2021-04-12 22:08:44 [main] DEBUG GeneralValidator - true
+2021-04-12 22:08:44 [main] DEBUG GeneralValidator - true
+2021-04-12 22:08:44 [main] DEBUG GeneralValidator - true
+2021-04-12 22:08:44 [main] DEBUG GeneralValidator - true
+2021-04-12 22:08:44 [main] DEBUG GeneralValidator - false
+2021-04-12 22:08:44 [main] DEBUG GeneralValidator - false
+2021-04-12 22:08:44 [main] DEBUG GeneralValidator - false
+2021-04-12 22:08:44 [main] DEBUG GeneralValidator - false
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - true
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - true
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - false
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - true
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - true
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - false
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - true
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - false
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - false
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - true
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - true
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - false
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - false
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - false
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - true
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - false
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - true
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - false
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - false
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - false
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - false
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - true
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - true
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - false
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - true
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - false
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - false
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - false
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - false
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - is valid pass true
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - is valid pass false
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - is valid pass false
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - is valid pass false
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - is valid pass false
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - is valid pass false
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - is valid pass false
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - true
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - false
+2021-04-15 11:37:00 [main] DEBUG GeneralValidator - false
+2021-04-15 11:37:01 [main] DEBUG GeneralValidator - false
+2021-04-15 11:37:01 [main] DEBUG GeneralValidator - false
+2021-04-15 11:37:01 [main] DEBUG GeneralValidator - false
+2021-04-15 11:37:01 [main] DEBUG GeneralValidator - true
+2021-04-15 11:37:01 [main] DEBUG GeneralValidator - true
+2021-04-15 11:37:01 [main] DEBUG GeneralValidator - true
+2021-04-15 11:37:01 [main] DEBUG GeneralValidator - true
+2021-04-15 11:37:01 [main] DEBUG GeneralValidator - false
+2021-04-15 11:37:01 [main] DEBUG GeneralValidator - true
+2021-04-15 11:37:01 [main] DEBUG GeneralValidator - false
+2021-04-15 11:37:01 [main] DEBUG GeneralValidator - false
+2021-04-15 11:37:01 [main] DEBUG GeneralValidator - true
+2021-04-15 11:37:01 [main] DEBUG GeneralValidator - true
+2021-04-15 11:37:01 [main] DEBUG GeneralValidator - false
+2021-04-15 11:37:01 [main] DEBUG GeneralValidator - true
+2021-04-15 11:37:01 [main] DEBUG GeneralValidator - false
+2021-04-15 11:37:01 [main] DEBUG GeneralValidator - false
+2021-04-15 11:37:01 [main] DEBUG GeneralValidator - false
+2021-04-15 11:38:16 [main] DEBUG GeneralValidator - true
+2021-04-15 11:38:16 [main] DEBUG GeneralValidator - true
+2021-04-15 11:38:16 [main] DEBUG GeneralValidator - false
+2021-04-15 11:38:16 [main] DEBUG GeneralValidator - true
+2021-04-15 11:38:16 [main] DEBUG GeneralValidator - false
+2021-04-15 11:38:16 [main] DEBUG GeneralValidator - false
+2021-04-15 11:38:16 [main] DEBUG GeneralValidator - false
+2021-04-15 12:03:08 [main] INFO  GeneralValidator - service name valid true
+2021-04-15 12:03:08 [main] INFO  GeneralValidator - service name valid true
+2021-04-15 12:03:08 [main] INFO  GeneralValidator - service name valid false
+2021-04-15 12:03:08 [main] INFO  GeneralValidator - service name valid true
+2021-04-15 12:03:08 [main] INFO  GeneralValidator - service name valid false
+2021-04-15 12:03:08 [main] INFO  GeneralValidator - service name valid false
+2021-04-15 12:05:03 [main] INFO  GeneralValidator - service name valid true
+2021-04-15 12:05:03 [main] INFO  GeneralValidator - service name valid true
+2021-04-15 12:05:03 [main] INFO  GeneralValidator - service name valid false
+2021-04-15 12:05:03 [main] INFO  GeneralValidator - service name valid false
+2021-04-15 12:05:03 [main] INFO  GeneralValidator - service name valid false
+2021-04-15 12:05:03 [main] INFO  GeneralValidator - service name valid false
+2021-04-15 12:05:19 [main] INFO  GeneralValidator - price valid true
+2021-04-15 12:05:19 [main] INFO  GeneralValidator - price valid true
+2021-04-15 12:05:19 [main] INFO  GeneralValidator - price valid true
+2021-04-15 12:05:19 [main] INFO  GeneralValidator - price valid false
+2021-04-15 12:05:19 [main] INFO  GeneralValidator - price valid true
+2021-04-15 12:05:20 [main] INFO  GeneralValidator - price valid false
+2021-04-15 12:06:20 [main] INFO  GeneralValidator - price valid true
+2021-04-15 12:06:20 [main] INFO  GeneralValidator - price valid true
+2021-04-15 12:06:20 [main] INFO  GeneralValidator - price valid true
+2021-04-15 12:06:20 [main] INFO  GeneralValidator - price valid false
+2021-04-15 12:06:20 [main] INFO  GeneralValidator - price valid false
+2021-04-15 12:06:28 [main] INFO  GeneralValidator - data valid true
+2021-04-15 12:06:28 [main] INFO  GeneralValidator - data valid false
+2021-04-15 12:06:28 [main] INFO  GeneralValidator - data valid false
+2021-04-15 12:06:28 [main] INFO  GeneralValidator - data valid true
+2021-04-15 12:06:28 [main] INFO  GeneralValidator - data valid true
+2021-04-15 12:06:28 [main] INFO  GeneralValidator - data valid false
+2021-04-15 12:06:28 [main] INFO  GeneralValidator - data valid false
+2021-04-15 12:07:05 [main] INFO  GeneralValidator - data valid true
+2021-04-15 12:07:05 [main] INFO  GeneralValidator - data valid false
+2021-04-15 12:07:05 [main] INFO  GeneralValidator - data valid false
+2021-04-15 12:07:05 [main] INFO  GeneralValidator - data valid true
+2021-04-15 12:07:05 [main] INFO  GeneralValidator - data valid false
+2021-04-15 12:07:05 [main] INFO  GeneralValidator - data valid false
+2021-04-15 12:07:05 [main] INFO  GeneralValidator - data valid false
+2021-04-15 12:07:13 [main] INFO  GeneralValidator - address valid true
+2021-04-15 12:07:13 [main] INFO  GeneralValidator - address valid true
+2021-04-15 12:07:13 [main] INFO  GeneralValidator - address valid false
+2021-04-15 12:07:13 [main] INFO  GeneralValidator - address valid true
+2021-04-15 12:07:13 [main] INFO  GeneralValidator - address valid true
+2021-04-15 12:07:21 [main] INFO  GeneralValidator - name valid true
+2021-04-15 12:07:21 [main] INFO  GeneralValidator - name valid true
+2021-04-15 12:07:21 [main] INFO  GeneralValidator - name valid true
+2021-04-15 12:07:21 [main] INFO  GeneralValidator - name valid false
+2021-04-15 12:07:21 [main] INFO  GeneralValidator - name valid false
+2021-04-15 12:07:21 [main] INFO  GeneralValidator - name valid false
+2021-04-15 12:07:21 [main] INFO  GeneralValidator - name valid false
+2021-04-15 12:07:30 [main] INFO  GeneralValidator - mail valid true
+2021-04-15 12:07:30 [main] INFO  GeneralValidator - mail valid false
+2021-04-15 12:07:30 [main] INFO  GeneralValidator - mail valid true
+2021-04-15 12:07:30 [main] INFO  GeneralValidator - mail valid false
+2021-04-15 12:07:30 [main] INFO  GeneralValidator - mail valid false
+2021-04-15 12:07:30 [main] INFO  GeneralValidator - mail valid false
+2021-04-15 12:07:37 [main] INFO  GeneralValidator - phone valid true
+2021-04-15 12:07:37 [main] INFO  GeneralValidator - phone valid false
+2021-04-15 12:07:37 [main] INFO  GeneralValidator - phone valid false
+2021-04-15 12:07:37 [main] INFO  GeneralValidator - phone valid false
+2021-04-15 12:07:37 [main] INFO  GeneralValidator - phone valid false
+2021-04-15 12:07:37 [main] INFO  GeneralValidator - phone valid true
+2021-04-15 12:07:44 [main] INFO  GeneralValidator - password valid true
+2021-04-15 12:07:44 [main] INFO  GeneralValidator - password valid false
+2021-04-15 12:07:44 [main] INFO  GeneralValidator - password valid false
+2021-04-15 12:07:44 [main] INFO  GeneralValidator - password valid false
+2021-04-15 12:07:44 [main] INFO  GeneralValidator - password valid false
+2021-04-15 12:07:44 [main] INFO  GeneralValidator - password valid false
+2021-04-15 12:10:31 [main] INFO  GeneralValidator - password valid true
+2021-04-15 12:10:31 [main] INFO  GeneralValidator - password valid false
+2021-04-15 12:10:31 [main] INFO  GeneralValidator - password valid true
+2021-04-15 12:10:31 [main] INFO  GeneralValidator - password valid false
+2021-04-15 12:10:31 [main] INFO  GeneralValidator - password valid true
+2021-04-15 12:10:31 [main] INFO  GeneralValidator - password valid false
+2021-04-15 12:16:51 [main] INFO  GeneralValidator - password valid true
+2021-04-15 12:16:51 [main] INFO  GeneralValidator - password valid false
+2021-04-15 12:16:51 [main] INFO  GeneralValidator - password valid true
+2021-04-15 12:16:51 [main] INFO  GeneralValidator - password valid false
+2021-04-15 12:16:51 [main] INFO  GeneralValidator - password valid true
+2021-04-15 12:16:51 [main] INFO  GeneralValidator - password valid false
