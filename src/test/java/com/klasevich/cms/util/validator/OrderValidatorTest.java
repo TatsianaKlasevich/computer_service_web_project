@@ -30,9 +30,9 @@ public class OrderValidatorTest {
         };
     }
 
-    @Test (dataProvider = "dataForValidOrder")
-    public void testIsValidOrder(Map<String,String> data, boolean expected) {
+    @Test(dataProvider = "dataForValidOrder")
+    public void testIsValidOrder(Map<String, String> data, boolean expected) {
         boolean actual = OrderValidator.isValidOrder(data);
-        assertEquals(actual,expected);
+        assertEquals(actual, expected);
     }
 }

@@ -10,6 +10,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="ctg" uri="/WEB-INF/tld/custom.tld" %>
 <jsp:useBean id="order" scope="request" class="com.klasevich.cms.model.entity.Order"/>
+<c:set var="readyStatus" scope="request" value="READY"/>
+
 
 <html>
 <head>

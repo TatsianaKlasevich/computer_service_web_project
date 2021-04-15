@@ -11,7 +11,7 @@ public class GeneralValidator {
     private static final Logger logger = LogManager.getLogger();
 
     public static boolean isValidCategoryName(String category) {
-        if (category== null||category.isBlank()){
+        if (category == null || category.isBlank()) {
             return false;
         }
         Matcher matcher = CATEGORY_NAME_REGEX.matcher(category);
@@ -20,7 +20,7 @@ public class GeneralValidator {
     }
 
     public static boolean isValidServiceName(String service) {
-        if (service== null||service.isBlank()){
+        if (service == null || service.isBlank()) {
             return false;
         }
         Matcher matcher = SERVICE_NAME_REGEX.matcher(service);
@@ -29,7 +29,7 @@ public class GeneralValidator {
     }
 
     public static boolean isValidId(String idString) {
-        if (idString== null||idString.isBlank()){
+        if (idString == null || idString.isBlank()) {
             return false;
         }
         Matcher matcher = ID_REGEX.matcher(idString);
@@ -39,7 +39,7 @@ public class GeneralValidator {
     }
 
     public static boolean isValidPrice(String price) {
-        if (price== null||price.isBlank()||price.equals("0")){
+        if (price == null || price.isBlank() || price.equals("0")) {
             return false;
         }
         Matcher matcher = PRICE_REGEX.matcher(price);
@@ -48,7 +48,7 @@ public class GeneralValidator {
     }
 
     public static boolean isValidDate(String date) {
-        if (date== null||date.isBlank()){
+        if (date == null || date.isBlank()) {
             return false;
         }
         Matcher matcher = DATE_REGEX.matcher(date);
@@ -57,7 +57,7 @@ public class GeneralValidator {
     }
 
     public static boolean isValidAddress(String address) {
-        if (address== null||address.isBlank()){
+        if (address == null || address.isBlank()) {
             return false;
         }
         Matcher matcher = ADDRESS_REGEX.matcher(address);
@@ -66,7 +66,7 @@ public class GeneralValidator {
     }
 
     public static boolean isValidProblem(String problem) {
-        if (problem== null||problem.isBlank()){
+        if (problem == null || problem.isBlank()) {
             return false;
         }
         Matcher matcher = PROBLEM_REGEX.matcher(problem);
@@ -75,7 +75,7 @@ public class GeneralValidator {
     }
 
     public static boolean isValidName(String name) {
-        if (name== null||name.isBlank()){
+        if (name == null || name.isBlank()) {
             return false;
         }
         Matcher matcher = NAME_REGEX.matcher(name);
@@ -84,7 +84,7 @@ public class GeneralValidator {
     }
 
     public static boolean isValidSurname(String surname) {
-        if (surname== null||surname.isBlank()){
+        if (surname == null || surname.isBlank()) {
             return false;
         }
         Matcher matcher = SURNAME_REGEX.matcher(surname);
@@ -93,7 +93,7 @@ public class GeneralValidator {
     }
 
     public static boolean isValidMail(String mail) {
-        if (mail== null||mail.isBlank()){
+        if (mail == null || mail.isBlank()) {
             return false;
         }
         Matcher matcher = MAIL_REGEX.matcher(mail);
@@ -102,7 +102,7 @@ public class GeneralValidator {
     }
 
     public static boolean isValidPhone(String phone) {
-        if (phone== null||phone.isBlank()){
+        if (phone == null || phone.isBlank()) {
             return false;
         }
         Matcher matcher = PHONE_REGEX.matcher(phone);
@@ -111,7 +111,7 @@ public class GeneralValidator {
     }
 
     public static boolean isValidPass(String password) {
-        if (password== null||password.isBlank()){
+        if (password == null || password.isBlank()) {
             return false;
         }
         Matcher matcher = PASS_REGEX.matcher(password);
@@ -120,7 +120,7 @@ public class GeneralValidator {
     }
 
     public static boolean isValidRepeatedPass(String password, String repeatedPassword) {
-        if (password== null||repeatedPassword==null||password.isBlank()||repeatedPassword.isBlank()){
+        if (password == null || repeatedPassword == null || password.isBlank() || repeatedPassword.isBlank()) {
             return false;
         }
         Matcher matcher = PASS_REGEX.matcher(password);

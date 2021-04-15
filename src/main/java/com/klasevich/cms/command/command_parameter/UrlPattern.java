@@ -19,4 +19,5 @@ public class UrlPattern {
     public static final String TO_PROFILE_COMMAND = "/controller?command=to_profile&messageWarning=";
     public static final String PARAMETER_WELCOME_PAGE = "&welcomePage=";
     public static final String PARAMETER_MESSAGE_WARNING = "&messageWarning=";
+    public static final String TO_SHOW_ADMIN_ORDER_COMMAND = "/controller?command=find_order_by_id&order_id=";
 }

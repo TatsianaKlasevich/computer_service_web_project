@@ -51,7 +51,7 @@
                             <div class="row">
                                 <label><fmt:message key="edit.service.name"/></label>
                                 <input type="text" name=serviceName value="${requestScope.serviceName}"
-                                       pattern="[а-яА-Я,a-zA-Z]+{1,125}"
+                                       pattern="([а-яА-Я, ]+){1,125}"
                                        placeholder="<fmt:message key="label.service.name"/>"
                                        data-toggle="tooltip" data-placement="bottom"
                                        title="<fmt:message key="rule.text"/>">

@@ -19,6 +19,7 @@ public class CommandRoleMap {
         ROLE_MAP.put(CommandType.LOCALIZATION, Arrays.asList(Role.USER, Role.GUEST, Role.ADMIN));
         ROLE_MAP.put(CommandType.TO_SERVICE, Arrays.asList(Role.USER, Role.GUEST, Role.ADMIN));
         ROLE_MAP.put(CommandType.TO_DELIVERY, Arrays.asList(Role.USER, Role.GUEST, Role.ADMIN));
+        ROLE_MAP.put(CommandType.MAIL, Arrays.asList(Role.ADMIN));
         ROLE_MAP.put(CommandType.LOGOUT, Arrays.asList(Role.USER, Role.ADMIN, Role.GUEST));
         ROLE_MAP.put(CommandType.TO_LOGIN, Arrays.asList(Role.GUEST, Role.USER, Role.ADMIN));
         ROLE_MAP.put(CommandType.LOGIN, Arrays.asList(Role.GUEST, Role.USER, Role.ADMIN));

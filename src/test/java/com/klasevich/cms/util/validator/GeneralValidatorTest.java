@@ -122,48 +122,48 @@ public class GeneralValidatorTest {
     @Test(dataProvider = "serviceNameData")
     public void testIsValidServiceName(String serviceName, boolean expected) {
         boolean actual = GeneralValidator.isValidServiceName(serviceName);
-        assertEquals(actual,expected);
+        assertEquals(actual, expected);
     }
 
     @Test(dataProvider = "priceData")
     public void testIsValidPrice(String price, boolean expected) {
         boolean actual = GeneralValidator.isValidPrice(price);
-        assertEquals(actual,expected);
+        assertEquals(actual, expected);
     }
 
     @Test(dataProvider = "dateData")
     public void testIsValidDate(String date, boolean expected) {
         boolean actual = GeneralValidator.isValidDate(date);
-        assertEquals(actual,expected);
+        assertEquals(actual, expected);
     }
 
     @Test(dataProvider = "addressData")
     public void testIsValidAddress(String address, boolean expected) {
         boolean actual = GeneralValidator.isValidAddress(address);
-        assertEquals(actual,expected);
+        assertEquals(actual, expected);
     }
 
     @Test(dataProvider = "nameData")
     public void testIsValidName(String name, boolean expected) {
         boolean actual = GeneralValidator.isValidName(name);
-        assertEquals(actual,expected);
+        assertEquals(actual, expected);
     }
 
     @Test(dataProvider = "mailData")
     public void testIsValidMail(String mail, boolean expected) {
         boolean actual = GeneralValidator.isValidMail(mail);
-        assertEquals(actual,expected);
+        assertEquals(actual, expected);
     }
 
     @Test(dataProvider = "phoneData")
     public void testIsValidPhone(String phone, boolean expected) {
         boolean actual = GeneralValidator.isValidPhone(phone);
-        assertEquals(actual,expected);
+        assertEquals(actual, expected);
     }
 
     @Test(dataProvider = "passwordData")
     public void testIsValidPass(String password, boolean expected) {
         boolean actual = GeneralValidator.isValidPass(password);
-        assertEquals(actual,expected);
+        assertEquals(actual, expected);
     }
 }

@@ -4,7 +4,6 @@ public class PagePath {
     public static final String REGISTRATION = "/jsp/registration.jsp";
     public static final String LOGIN = "/jsp/login.jsp";
     public static final String MAIN = "/jsp/main.jsp";
-    public static final String MAIL = "/jsp/mail.jsp";
     public static final String INDEX = "/index.jsp";
     public static final String USER_MAIN = "/jsp/user_main.jsp";
     public static final String ADMIN_MAIN = "/jsp/admin_main.jsp";

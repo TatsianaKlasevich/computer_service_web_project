@@ -10,6 +10,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="ctg" uri="/WEB-INF/tld/custom.tld" %>
 <jsp:useBean id="order" scope="request" class="com.klasevich.cms.model.entity.Order"/>
+<c:set var="readyStatus" scope="request" value="READY"/>
 
 <html>
 <head>
@@ -133,6 +134,17 @@
                     </div>
                     <button type="submit"><fmt:message key="button.change"/></button>
                 </form>
+                <br/>
+                <c:if test="${order.status.toString().equals(readyStatus)}">
+                <form method="post" action="controller">
+                    <input type="hidden" name="command" value="mail">
+                    <input type="hidden" name="name" value=" ${order.user.name}">
+                    <input type="hidden" name="email" value="${order.user.mail}">
+                    <input type="hidden" name="order_id" value="${order.id}">
+                    <input type="hidden" name="amount" value="${requestScope.amount}">
+                    <button type="submit"><fmt:message key="message.send.letter"/></button>
+                </form>
+                </c:if>
                 <br/>
                 <c:if test="${requestScope.services!=null}">
                     <div class="mobile">

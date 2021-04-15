@@ -105,7 +105,7 @@ public enum CommandType {
             this.command = new ShowUsersCommand(new UserServiceImpl());
         }
     },
-       REMOVE_SERVICE {
+    REMOVE_SERVICE {
         {
             this.command = new RemoveServiceCommand(new CommandServiceImpl());
         }

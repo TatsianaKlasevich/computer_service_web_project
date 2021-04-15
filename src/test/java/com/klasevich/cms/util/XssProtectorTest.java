@@ -20,6 +20,6 @@ public class XssProtectorTest {
     @Test(dataProvider = "dataForXssProtector")
     public void protect(String line, String expected) {
         String actual = XssProtector.protect(line);
-        assertEquals(actual,expected);
+        assertEquals(actual, expected);
     }
 }

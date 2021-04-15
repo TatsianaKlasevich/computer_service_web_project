@@ -36,12 +36,12 @@ public class RoleControlFilter implements Filter {
             logger.debug("Role defined in filter as {}", role);
             if (!MAP.containsRole(type, role)) {
                 logger.warn("Role control filter: '{}' attempted to execute '{}' command ", role, command);
-                response.sendError(HttpServletResponse.SC_FORBIDDEN);//todo know out
+                response.sendError(HttpServletResponse.SC_FORBIDDEN);
                 return;
             }
         } else {
             logger.warn("Role control filter: no command to execute!");
-            RequestDispatcher dispatcher = request.getRequestDispatcher(ERROR_404);//todo
+            RequestDispatcher dispatcher = request.getRequestDispatcher(ERROR_404);
             dispatcher.forward(request, response);
         }
         chain.doFilter(request, response);

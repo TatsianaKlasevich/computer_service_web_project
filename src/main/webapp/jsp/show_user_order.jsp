@@ -10,6 +10,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="ctg" uri="/WEB-INF/tld/custom.tld" %>
 <jsp:useBean id="order" scope="request" class="com.klasevich.cms.model.entity.Order"/>
+<c:set var="readyStatus" scope="request" value="READY"/>
+
 
 <html>
 <head>
@@ -134,7 +136,7 @@
                     <h1><fmt:message key="label.whole.amount"/> : ${requestScope.amount} <fmt:message
                             key="label.byn"/></h1>
                     <c:if test="${requestScope.amount>30}">
-                    <p><fmt:message key="message.button.ok"/></p>
+                        <p><fmt:message key="message.button.ok"/></p>
                     </c:if>
                     <p><fmt:message key="message.button.cancel"/></p>
                     <p><fmt:message key="message.warning"/></p>
