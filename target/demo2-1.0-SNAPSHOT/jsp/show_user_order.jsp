@@ -136,7 +136,7 @@
                     <h1><fmt:message key="label.whole.amount"/> : ${requestScope.amount} <fmt:message
                             key="label.byn"/></h1>
                     <c:if test="${requestScope.amount>30}">
-                    <p><fmt:message key="message.button.ok"/></p>
+                        <p><fmt:message key="message.button.ok"/></p>
                     </c:if>
                     <p><fmt:message key="message.button.cancel"/></p>
                     <p><fmt:message key="message.warning"/></p>

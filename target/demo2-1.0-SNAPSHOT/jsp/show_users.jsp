@@ -55,6 +55,7 @@
                     <th><fmt:message key="label.user.surname"/></th>
                     <th><fmt:message key="label.user.mail"/></th>
                     <th><fmt:message key="label.user.phone"/></th>
+                    <th><fmt:message key="label.user.role"/></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -64,6 +65,7 @@
                         <td> ${user.surname}</td>
                         <td> ${user.mail}</td>
                         <td> ${user.phone}</td>
+                        <td> ${user.role}</td>
                         <td>
                             <form name="update service" method="post" action="controller">
                                 <input type="hidden" name="command" value="remove_user">
