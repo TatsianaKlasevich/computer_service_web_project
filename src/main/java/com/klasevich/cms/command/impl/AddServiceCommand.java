@@ -23,11 +23,20 @@ import static com.klasevich.cms.command.command_parameter.RequestAttribute.*;
 import static com.klasevich.cms.command.command_parameter.RequestParameter.*;
 import static com.klasevich.cms.command.command_parameter.UrlPattern.TO_ADMIN_MANAGE_SERVICE_COMMAND;
 
+/**
+ * @author Tatsiana Klasevich
+ * This command allows admin to add a service.
+ */
 public class AddServiceCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
 
     private CommandServiceImpl service;
 
+    /**
+     * Instantiates a new Add service command.
+     *
+     * @param adminService the computer service
+     */
     public AddServiceCommand(CommandServiceImpl adminService) {
         this.service = adminService;
     }
@@ -39,7 +48,6 @@ public class AddServiceCommand implements Command {
         String serviceName = request.getParameter(SERVICE_NAME);
         String priceString = request.getParameter(SERVICE_PRICE);
         serviceName = XssProtector.protect(serviceName);
-
         Map<String, String> data = new HashMap<>();
         data.put(CATEGORY_NAME, category);
         data.put(SERVICE_NAME, serviceName);

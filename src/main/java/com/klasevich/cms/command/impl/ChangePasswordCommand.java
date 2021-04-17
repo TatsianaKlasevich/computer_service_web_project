@@ -22,10 +22,19 @@ import static com.klasevich.cms.command.command_parameter.RequestAttribute.MESSA
 import static com.klasevich.cms.command.command_parameter.RequestParameter.*;
 import static com.klasevich.cms.command.command_parameter.UrlPattern.TO_PROFILE_COMMAND;
 
+/**
+ * @author Tatsiana Klasevich
+ * This command allows user and admin to change password in a profile.
+ */
 public class ChangePasswordCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
     private UserServiceImpl service;
 
+    /**
+     * Instantiates a new Change password command.
+     *
+     * @param service the user service
+     */
     public ChangePasswordCommand(UserServiceImpl service) {
         this.service = service;
     }

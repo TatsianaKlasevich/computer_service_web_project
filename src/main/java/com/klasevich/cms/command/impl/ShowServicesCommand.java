@@ -19,11 +19,20 @@ import static com.klasevich.cms.command.command_parameter.PagePath.*;
 import static com.klasevich.cms.command.command_parameter.RequestAttribute.*;
 import static com.klasevich.cms.command.command_parameter.RequestParameter.*;
 
+/**
+ * @author Tatsiana Klasevich
+ * This command allows admin to see all the services.
+ */
 public class ShowServicesCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
 
     private CommandServiceImpl service;
 
+    /**
+     * Instantiates a new Show services command.
+     *
+     * @param service the command service
+     */
     public ShowServicesCommand(CommandServiceImpl service) {
         this.service = service;
     }

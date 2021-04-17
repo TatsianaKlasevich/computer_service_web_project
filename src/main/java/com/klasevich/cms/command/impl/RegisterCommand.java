@@ -25,10 +25,19 @@ import static com.klasevich.cms.command.command_parameter.RequestAttribute.*;
 import static com.klasevich.cms.command.command_parameter.RequestParameter.*;
 import static com.klasevich.cms.command.command_parameter.UrlPattern.*;
 
+/**
+ * @author Tatsiana Klasevich
+ * This command allows guest to register himself.
+ */
 public class RegisterCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
     private UserServiceImpl service;
 
+    /**
+     * Instantiates a new Register command.
+     *
+     * @param service the user service
+     */
     public RegisterCommand(UserServiceImpl service) {
         this.service = service;
     }

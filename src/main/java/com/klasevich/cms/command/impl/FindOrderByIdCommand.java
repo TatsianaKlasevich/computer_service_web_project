@@ -26,12 +26,22 @@ import static com.klasevich.cms.command.command_parameter.RequestAttribute.*;
 import static com.klasevich.cms.command.command_parameter.RequestParameter.*;
 import static java.math.RoundingMode.HALF_UP;
 
+/**
+ * @author Tatsiana Klasevich
+ * This command allows admin tof find an order by ID.
+ */
 public class FindOrderByIdCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
 
     private OrderServiceImpl orderService;
     private CommandServiceImpl commandService;
 
+    /**
+     * Instantiates a new Find order by id command.
+     *
+     * @param orderService   the order service
+     * @param commandService the command service
+     */
     public FindOrderByIdCommand(OrderServiceImpl orderService, CommandServiceImpl commandService) {
         this.orderService = orderService;
         this.commandService = commandService;

@@ -13,6 +13,10 @@ import static com.klasevich.cms.command.command_parameter.RequestParameter.RU;
 import static com.klasevich.cms.command.command_parameter.SessionAttribute.CURRENT_ROLE;
 import static com.klasevich.cms.command.command_parameter.SessionAttribute.LOCALE;
 
+/**
+ * @author Tatsiana Klasevich
+ * The session listener to observe by session attributes and when session destroyed.
+ */
 @WebListener
 public class SessionListener implements HttpSessionListener {
     private static final Logger logger = LogManager.getLogger();

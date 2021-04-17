@@ -20,11 +20,20 @@ import static com.klasevich.cms.command.CommandResult.Type.FORWARD;
 import static com.klasevich.cms.command.command_parameter.PagePath.*;
 import static com.klasevich.cms.command.command_parameter.RequestAttribute.*;
 
+/**
+ * @author Tatsiana Klasevich
+ * This command allows user to see all his orders.
+ */
 public class UserOrderCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
 
     private OrderServiceImpl service;
 
+    /**
+     * Instantiates a new User order command.
+     *
+     * @param service the order service
+     */
     public UserOrderCommand(OrderServiceImpl service) {
         this.service = service;
     }

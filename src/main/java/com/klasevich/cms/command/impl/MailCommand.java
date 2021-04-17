@@ -17,11 +17,20 @@ import static com.klasevich.cms.command.command_parameter.RequestAttribute.*;
 import static com.klasevich.cms.command.command_parameter.RequestParameter.*;
 import static com.klasevich.cms.command.command_parameter.UrlPattern.TO_SHOW_ADMIN_ORDER_COMMAND;
 
+/**
+ * @author Tatsiana Klasevich
+ * This command allows mailing user a letter about his order has been prepared.
+ */
 public class MailCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
 
     private CommandServiceImpl service;
 
+    /**
+     * Instantiates a new Mail command.
+     *
+     * @param service the command service
+     */
     public MailCommand(CommandServiceImpl service) {
         this.service = service;
     }

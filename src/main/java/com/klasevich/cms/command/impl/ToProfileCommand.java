@@ -14,6 +14,10 @@ import static com.klasevich.cms.command.CommandResult.Type.FORWARD;
 import static com.klasevich.cms.command.command_parameter.PagePath.*;
 import static com.klasevich.cms.command.command_parameter.RequestAttribute.MESSAGE_WARNING;
 
+/**
+ * @author Tatsiana Klasevich
+ * This command allows going to profile page.
+ */
 public class ToProfileCommand implements Command {
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {

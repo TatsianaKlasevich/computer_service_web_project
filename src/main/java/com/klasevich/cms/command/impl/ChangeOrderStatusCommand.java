@@ -21,11 +21,20 @@ import static com.klasevich.cms.command.command_parameter.RequestAttribute.*;
 import static com.klasevich.cms.command.command_parameter.RequestParameter.ORDER_ID;
 import static com.klasevich.cms.command.command_parameter.UrlPattern.TO_SHOW_USER_ORDER_COMMAND;
 
+/**
+ * @author Tatsiana Klasevich
+ * This command allows user to change status of his order.
+ */
 public class ChangeOrderStatusCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
 
     private OrderServiceImpl service;
 
+    /**
+     * Instantiates a new Change order status command.
+     *
+     * @param service the order service
+     */
     public ChangeOrderStatusCommand(OrderServiceImpl service) {
         this.service = service;
     }

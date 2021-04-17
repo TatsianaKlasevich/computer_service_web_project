@@ -14,6 +14,10 @@ import static com.klasevich.cms.command.command_parameter.PagePath.USER_MAIN;
 import static com.klasevich.cms.command.command_parameter.RequestAttribute.MESSAGE_WARNING;
 import static com.klasevich.cms.command.command_parameter.RequestParameter.ORDER_ID;
 
+/**
+ * @author Tatsiana Klasevich
+ * This command allows going to user's main page.
+ */
 public class ToUserMainCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
 

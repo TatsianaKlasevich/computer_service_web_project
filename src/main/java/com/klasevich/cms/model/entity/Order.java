@@ -2,6 +2,10 @@ package com.klasevich.cms.model.entity;
 
 import java.time.LocalDate;
 
+/**
+ * @author Tatsiana Klasevich
+ * The object Order.
+ */
 public class Order {
     private static final long REPAIR_PERIOD = 5L;
     private int id;
@@ -11,12 +15,27 @@ public class Order {
     private Category category;
     private String problem;
     private Status status;
+    /**
+     * The Has discount.
+     */
     boolean hasDiscount;
     private User user;
 
+    /**
+     * Instantiates a new Order.
+     */
     public Order() {
     }
 
+    /**
+     * Instantiates a new Order.
+     *
+     * @param applianceDate the appliance date
+     * @param address       the address
+     * @param category      the category
+     * @param problem       the problem
+     * @param status        the status
+     */
     public Order(LocalDate applianceDate, String address, Category category, String problem, Status status) {
         this.applianceDate = applianceDate;
         this.issueDate = applianceDate.plusDays(REPAIR_PERIOD);
@@ -26,6 +45,17 @@ public class Order {
         this.status = status;
     }
 
+    /**
+     * Instantiates a new Order.
+     *
+     * @param applianceDate the appliance date
+     * @param address       the address
+     * @param category      the category
+     * @param problem       the problem
+     * @param status        the status
+     * @param hasDiscount   the has discount
+     * @param user          the user
+     */
     public Order(LocalDate applianceDate, String address, Category category, String problem, Status status, boolean hasDiscount, User user) {
         this.applianceDate = applianceDate;
         this.issueDate = applianceDate.plusDays(REPAIR_PERIOD);
@@ -37,6 +67,19 @@ public class Order {
         this.user = user;
     }
 
+    /**
+     * Instantiates a new Order.
+     *
+     * @param id            the id
+     * @param applianceDate the appliance date
+     * @param issueDate     the issue date
+     * @param address       the address
+     * @param category      the category
+     * @param problem       the problem
+     * @param status        the status
+     * @param hasDiscount   the has discount
+     * @param user          the user
+     */
     public Order(int id, LocalDate applianceDate, LocalDate issueDate, String address, Category category,
                  String problem, Status status, boolean hasDiscount, User user) {
         this.id = id;
@@ -50,74 +93,164 @@ public class Order {
         this.user = user;
     }
 
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * Sets id.
+     *
+     * @param id the id
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+    /**
+     * Gets appliance date.
+     *
+     * @return the appliance date
+     */
     public LocalDate getApplianceDate() {
         return applianceDate;
     }
 
+    /**
+     * Sets appliance date.
+     *
+     * @param applianceDate the appliance date
+     */
     public void setApplianceDate(LocalDate applianceDate) {
         this.applianceDate = applianceDate;
     }
 
+    /**
+     * Gets issue date.
+     *
+     * @return the issue date
+     */
     public LocalDate getIssueDate() {
         return issueDate;
     }
 
+    /**
+     * Sets issue date.
+     *
+     * @param issueDate the issue date
+     */
     public void setIssueDate(LocalDate issueDate) {
         this.issueDate = issueDate;
     }
 
+    /**
+     * Gets address.
+     *
+     * @return the address
+     */
     public String getAddress() {
         return address;
     }
 
+    /**
+     * Sets address.
+     *
+     * @param address the address
+     */
     public void setAddress(String address) {
         this.address = address;
     }
 
+    /**
+     * Gets category.
+     *
+     * @return the category
+     */
     public Category getCategory() {
         return category;
     }
 
+    /**
+     * Sets category.
+     *
+     * @param category the category
+     */
     public void setCategory(Category category) {
         this.category = category;
     }
 
+    /**
+     * Gets problem.
+     *
+     * @return the problem
+     */
     public String getProblem() {
         return problem;
     }
 
+    /**
+     * Sets problem.
+     *
+     * @param problem the problem
+     */
     public void setProblem(String problem) {
         this.problem = problem;
     }
 
+    /**
+     * Gets status.
+     *
+     * @return the status
+     */
     public Status getStatus() {
         return status;
     }
 
+    /**
+     * Sets status.
+     *
+     * @param status the status
+     */
     public void setStatus(Status status) {
         this.status = status;
     }
 
+    /**
+     * Is has discount boolean.
+     *
+     * @return the boolean
+     */
     public boolean isHasDiscount() {
         return hasDiscount;
     }
 
+    /**
+     * Sets has discount.
+     *
+     * @param hasDiscount the has discount
+     */
     public void setHasDiscount(boolean hasDiscount) {
         this.hasDiscount = hasDiscount;
     }
 
+    /**
+     * Gets user.
+     *
+     * @return the user
+     */
     public User getUser() {
         return user;
     }
 
+    /**
+     * Sets user.
+     *
+     * @param user the user
+     */
     public void setUser(User user) {
         this.user = user;
     }

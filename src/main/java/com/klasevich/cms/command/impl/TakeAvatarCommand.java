@@ -17,11 +17,20 @@ import static com.klasevich.cms.command.command_parameter.OtherParameter.EMPTY_P
 import static com.klasevich.cms.command.command_parameter.OtherParameter.FILE_NAME;
 import static com.klasevich.cms.command.command_parameter.PagePath.*;
 
+/**
+ * @author Tatsiana Klasevich
+ * This command allows to show avatar in the page.
+ */
 public class TakeAvatarCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
 
     private CommandServiceImpl service;
 
+    /**
+     * Instantiates a new Take avatar command.
+     *
+     * @param service the command service
+     */
     public TakeAvatarCommand(CommandServiceImpl service) {
         this.service = service;
     }

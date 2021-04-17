@@ -19,10 +19,19 @@ import static com.klasevich.cms.command.command_parameter.RequestAttribute.MESSA
 import static com.klasevich.cms.command.command_parameter.RequestParameter.PAGE_NUMBER;
 import static com.klasevich.cms.command.command_parameter.RequestParameter.USER_ID;
 
+/**
+ * @author Tatsiana Klasevich
+ * This command allows admin to remove a user.
+ */
 public class RemoveUserCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
     private UserServiceImpl service;
 
+    /**
+     * Instantiates a new Remove user command.
+     *
+     * @param service the user service
+     */
     public RemoveUserCommand(UserServiceImpl service) {
         this.service = service;
     }

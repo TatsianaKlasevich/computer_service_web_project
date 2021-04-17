@@ -9,7 +9,15 @@ import java.util.Map;
 import static com.klasevich.cms.command.command_parameter.RequestParameter.*;
 import static org.testng.Assert.*;
 
+/**
+ * The type Order validator test.
+ */
 public class OrderValidatorTest {
+    /**
+     * Data for valid order object [ ] [ ].
+     *
+     * @return the object [ ] [ ]
+     */
     @DataProvider
     public Object[][] dataForValidOrder() {
         Map<String, String> correctData = new HashMap<>();
@@ -30,6 +38,12 @@ public class OrderValidatorTest {
         };
     }
 
+    /**
+     * Test is valid order.
+     *
+     * @param data     the data
+     * @param expected the expected
+     */
     @Test(dataProvider = "dataForValidOrder")
     public void testIsValidOrder(Map<String, String> data, boolean expected) {
         boolean actual = OrderValidator.isValidOrder(data);

@@ -13,6 +13,10 @@ import static com.klasevich.cms.command.command_parameter.SessionAttribute.CURRE
 import static com.klasevich.cms.command.command_parameter.SessionAttribute.USER;
 import static com.klasevich.cms.model.entity.Role.GUEST;
 
+/**
+ * @author Tatsiana Klasevich
+ * This command allows logging out.
+ */
 public class LogoutCommand implements Command {
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {

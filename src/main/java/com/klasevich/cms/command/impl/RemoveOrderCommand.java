@@ -20,10 +20,19 @@ import static com.klasevich.cms.command.command_parameter.RequestAttribute.*;
 import static com.klasevich.cms.command.command_parameter.RequestParameter.*;
 import static com.klasevich.cms.command.command_parameter.UrlPattern.TO_SHOW_ORDERS_COMMAND;
 
+/**
+ * @author Tatsiana Klasevich
+ * This command allows admin to remove an order.
+ */
 public class RemoveOrderCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
     private OrderServiceImpl service;
 
+    /**
+     * Instantiates a new Remove order command.
+     *
+     * @param service the order service
+     */
     public RemoveOrderCommand(OrderServiceImpl service) {
         this.service = service;
     }

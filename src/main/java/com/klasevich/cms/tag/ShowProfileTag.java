@@ -10,6 +10,10 @@ import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.TagSupport;
 import java.io.IOException;
 
+/**
+ * @author Tatsiana Klasevich
+ * This tag show name and surname of user, if user it's red, if admin - blue.
+ */
 public class ShowProfileTag extends TagSupport {
 
     @Override

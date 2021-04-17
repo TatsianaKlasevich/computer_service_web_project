@@ -20,17 +20,22 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.UUID;
 
+import static com.klasevich.cms.command.command_parameter.OtherParameter.DEFAULT_PATH;
+import static com.klasevich.cms.command.command_parameter.OtherParameter.SEPARATOR;
 import static com.klasevich.cms.command.command_parameter.PagePath.PROFILE;
 import static com.klasevich.cms.command.command_parameter.RequestAttribute.MESSAGE_WARNING;
 import static com.klasevich.cms.command.command_parameter.UrlPattern.UPLOADING_CONTROLLER;
 
+/**
+ * @author Tatsiana Klasevich
+ * The class of  uploading controller.
+ */
 @WebServlet(urlPatterns = {UPLOADING_CONTROLLER})
 @MultipartConfig(fileSizeThreshold = 1024 * 1024,
         maxFileSize = 1024 * 1024 * 5,
         maxRequestSize = 1024 * 1024 * 5 * 5)
 public class UploadingController extends HttpServlet {
     private static final Logger logger = LogManager.getLogger();
-    private static final String DEFAULT_PATH = "C:\\\\Users\\\\USER\\\\IdeaProjects\\\\computer_maintenance_service\\\\src\\\\main\\\\webapp\\\\images\\\\uploaded\\\\";
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -41,7 +46,7 @@ public class UploadingController extends HttpServlet {
             try {
                 String path = part.getSubmittedFileName();
                 logger.debug("part's path {}", path);
-                String randFileName = UUID.randomUUID() + path.substring(path.lastIndexOf("."));
+                String randFileName = UUID.randomUUID() + path.substring(path.lastIndexOf(SEPARATOR));
                 logger.debug("random file's name {}", randFileName);
                 String pathToImage = DEFAULT_PATH + path;
                 part.write(pathToImage);
@@ -51,7 +56,7 @@ public class UploadingController extends HttpServlet {
                     if (service.addAvatar(user.getMail(), validPath)) {
                         user.setAvatar(validPath);
                     } else {
-                        request.setAttribute("upload_result", MessageManager.getProperty("error.upload.failed"));
+                        request.setAttribute(MESSAGE_WARNING, MessageManager.getProperty("error.upload.failed"));
                     }
                 }
             } catch (StringIndexOutOfBoundsException e) {

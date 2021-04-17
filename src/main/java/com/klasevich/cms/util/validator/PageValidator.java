@@ -7,9 +7,18 @@ import java.util.regex.Matcher;
 
 import static com.klasevich.cms.util.validator.ValidationRegexPattern.PAGE_REGEX;
 
+/**
+ * Class check if page is valid.
+ */
 public class PageValidator {
     private static Logger logger = LogManager.getLogger();
 
+    /**
+     * Change page.
+     *
+     * @param page the page
+     * @return changed page
+     */
     public static String findPage(String page) {
         Matcher matcher = PAGE_REGEX.matcher(page);
         String currentPage = null;

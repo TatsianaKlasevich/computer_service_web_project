@@ -16,6 +16,10 @@ import static com.klasevich.cms.command.command_parameter.RequestParameter.*;
 import static com.klasevich.cms.command.command_parameter.SessionAttribute.LOCALE;
 import static com.klasevich.cms.command.command_parameter.UrlPattern.CONTROLLER_BEFORE;
 
+/**
+ * @author Tatsiana Klasevich
+ * This command allows changing a language.
+ */
 public class LocalizationCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
 

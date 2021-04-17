@@ -19,11 +19,20 @@ import static com.klasevich.cms.command.command_parameter.PagePath.*;
 import static com.klasevich.cms.command.command_parameter.RequestAttribute.*;
 import static com.klasevich.cms.command.command_parameter.RequestParameter.PAGE_NUMBER;
 
+/**
+ * @author Tatsiana Klasevich
+ * This command allows admin to see all the users.
+ */
 public class ShowUsersCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
 
     private UserServiceImpl service;
 
+    /**
+     * Instantiates a new Show users command.
+     *
+     * @param service the user service
+     */
     public ShowUsersCommand(UserServiceImpl service) {
         this.service = service;
     }

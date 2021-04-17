@@ -22,11 +22,20 @@ import static com.klasevich.cms.command.command_parameter.RequestAttribute.*;
 import static com.klasevich.cms.command.command_parameter.RequestParameter.*;
 import static com.klasevich.cms.command.command_parameter.RequestParameter.PAGE_NUMBER;
 
+/**
+ * @author Tatsiana Klasevich
+ * This command allows admin to find orders by category.
+ */
 public class FindOrdersByCategoryCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
 
     private OrderServiceImpl service;
 
+    /**
+     * Instantiates a new Find orders by category command.
+     *
+     * @param service the order service
+     */
     public FindOrdersByCategoryCommand(OrderServiceImpl service) {
         this.service = service;
     }

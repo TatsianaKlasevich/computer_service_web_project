@@ -21,11 +21,20 @@ import static com.klasevich.cms.command.command_parameter.PagePath.*;
 import static com.klasevich.cms.command.command_parameter.RequestAttribute.*;
 import static com.klasevich.cms.command.command_parameter.RequestParameter.PAGE_NUMBER;
 
+/**
+ * @author Tatsiana Klasevich
+ *This command allows admin to find orders by status.
+ */
 public class FindOrdersByStatusCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
 
     private OrderServiceImpl service;
 
+    /**
+     * Instantiates a new Find orders by status command.
+     *
+     * @param service the order service
+     */
     public FindOrdersByStatusCommand(OrderServiceImpl service) {
         this.service = service;
     }

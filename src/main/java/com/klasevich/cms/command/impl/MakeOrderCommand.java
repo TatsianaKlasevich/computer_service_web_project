@@ -26,10 +26,19 @@ import static com.klasevich.cms.command.command_parameter.RequestParameter.*;
 import static com.klasevich.cms.command.command_parameter.UrlPattern.PARAMETER_MESSAGE_WARNING;
 import static com.klasevich.cms.command.command_parameter.UrlPattern.TO_USER_MAIN_COMMAND;
 
+/**
+ * @author Tatsiana Klasevich
+ * This command allows user to make an order.
+ */
 public class MakeOrderCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
     private OrderServiceImpl service;
 
+    /**
+     * Instantiates a new Make order command.
+     *
+     * @param service the order service
+     */
     public MakeOrderCommand(OrderServiceImpl service) {
         this.service = service;
     }

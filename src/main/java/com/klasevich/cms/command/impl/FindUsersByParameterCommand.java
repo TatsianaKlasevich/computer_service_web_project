@@ -20,11 +20,20 @@ import static com.klasevich.cms.command.command_parameter.PagePath.*;
 import static com.klasevich.cms.command.command_parameter.RequestAttribute.*;
 import static com.klasevich.cms.command.command_parameter.RequestParameter.PAGE_NUMBER;
 
+/**
+ * @author Tatsiana Klasevich
+ * This command allows admin to find users by some parameter.
+ */
 public class FindUsersByParameterCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
 
     private UserServiceImpl service;
 
+    /**
+     * Instantiates a new Find users by parameter command.
+     *
+     * @param service the user service
+     */
     public FindUsersByParameterCommand(UserServiceImpl service) {
         this.service = service;
     }

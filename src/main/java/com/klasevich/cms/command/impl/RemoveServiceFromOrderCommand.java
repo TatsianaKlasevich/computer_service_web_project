@@ -20,10 +20,19 @@ import static com.klasevich.cms.command.command_parameter.RequestAttribute.MESSA
 import static com.klasevich.cms.command.command_parameter.RequestParameter.ORDER_ID;
 import static com.klasevich.cms.command.command_parameter.RequestParameter.SERVICE_ID;
 
+/**
+ * @author Tatsiana Klasevich
+ * This command allows admin to remove a service from an order.
+ */
 public class RemoveServiceFromOrderCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
     private OrderServiceImpl service;
 
+    /**
+     * Instantiates a new Remove service from order command.
+     *
+     * @param service the order service
+     */
     public RemoveServiceFromOrderCommand(OrderServiceImpl service) {
         this.service = service;
     }

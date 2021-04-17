@@ -10,7 +10,15 @@ import static com.klasevich.cms.command.command_parameter.RequestParameter.*;
 import static com.klasevich.cms.command.command_parameter.RequestParameter.PARAM_RE_PASSWORD;
 import static org.testng.Assert.*;
 
+/**
+ * The type User validator test.
+ */
 public class UserValidatorTest {
+    /**
+     * Data for valid registration object [ ] [ ].
+     *
+     * @return the object [ ] [ ]
+     */
     @DataProvider
     public Object[][] dataForValidRegistration() {
         Map<String, String> correctData = new HashMap<>();
@@ -35,6 +43,12 @@ public class UserValidatorTest {
         };
     }
 
+    /**
+     * Test is valid registration.
+     *
+     * @param data     the data
+     * @param expected the expected
+     */
     @Test(dataProvider = "dataForValidRegistration")
     public void testIsValidRegistration(Map<String, String> data, boolean expected) {
         boolean actual = UserValidator.isValidRegistration(data);

@@ -19,11 +19,20 @@ import static com.klasevich.cms.command.command_parameter.PagePath.*;
 import static com.klasevich.cms.command.command_parameter.RequestAttribute.*;
 import static com.klasevich.cms.command.command_parameter.RequestParameter.PAGE_NUMBER;
 
+/**
+ * @author Tatsiana Klasevich
+ * This command allows admin to see all the orders to add services there.
+ */
 public class ShowOrdersToAddServicesCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
 
     private OrderServiceImpl service;
 
+    /**
+     * Instantiates a new Show orders to add services command.
+     *
+     * @param service the order service
+     */
     public ShowOrdersToAddServicesCommand(OrderServiceImpl service) {
         this.service = service;
     }

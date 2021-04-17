@@ -5,6 +5,10 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.annotation.WebInitParam;
 import java.io.IOException;
 
+/**
+ * @author Tatsiana Klasevich
+ * The Encoding filter.
+ */
 @WebFilter(filterName = "Encoding", urlPatterns = {"/*"},
         initParams = {@WebInitParam(name = "encoding", value = "UTF-8",
                 description = "Encoding Param")})

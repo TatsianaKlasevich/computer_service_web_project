@@ -12,6 +12,10 @@ import java.util.Map;
 
 import static com.klasevich.cms.command.command_parameter.RequestParameter.*;
 
+/**
+ * @author Tatsiana Klasevich
+ * The type Order factory.
+ */
 public class OrderFactory extends AbstractFactory<Order> {
     private static final String DATE_FORMAT = "yyyy.MM.d";
     private UserDao userDao = new UserDaoImpl();

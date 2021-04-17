@@ -15,6 +15,10 @@ import java.util.Optional;
 
 import static com.klasevich.cms.model.dao.impl.SqlQuery.*;
 
+/**
+ * @author Tatsiana Klasevich
+ * UserDao implementation.
+ */
 public class UserDaoImpl implements UserDao {
     private static final Logger logger = LogManager.getLogger();
     private static final ConnectionPool pool = ConnectionPool.getInstance();

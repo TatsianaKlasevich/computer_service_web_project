@@ -7,9 +7,18 @@ import java.util.regex.Matcher;
 
 import static com.klasevich.cms.util.validator.ValidationRegexPattern.*;
 
+/**
+ * The class with General validators for all fields of project objects
+ */
 public class GeneralValidator {
     private static final Logger logger = LogManager.getLogger();
 
+    /**
+     * Check if category name valid.
+     *
+     * @param category the type of category
+     * @return true if category name is valid
+     */
     public static boolean isValidCategoryName(String category) {
         if (category == null || category.isBlank()) {
             return false;
@@ -19,6 +28,12 @@ public class GeneralValidator {
         return matcher.matches();
     }
 
+    /**
+     * Check if service name valid.
+     *
+     * @param service the type of service
+     * @return true if service name is valid
+     */
     public static boolean isValidServiceName(String service) {
         if (service == null || service.isBlank()) {
             return false;
@@ -28,6 +43,12 @@ public class GeneralValidator {
         return matcher.matches();
     }
 
+    /**
+     * Check if id valid.
+     *
+     * @param idString id
+     * @return true if id is valid
+     */
     public static boolean isValidId(String idString) {
         if (idString == null || idString.isBlank()) {
             return false;
@@ -38,6 +59,12 @@ public class GeneralValidator {
         return matcher.matches() && id > 0;
     }
 
+    /**
+     * Check if price valid.
+     *
+     * @param price the service price
+     * @return true if price is valid
+     */
     public static boolean isValidPrice(String price) {
         if (price == null || price.isBlank() || price.equals("0")) {
             return false;
@@ -47,6 +74,12 @@ public class GeneralValidator {
         return matcher.matches();
     }
 
+    /**
+     * Check if date valid.
+     *
+     * @param date the date
+     * @return true if date is valid
+     */
     public static boolean isValidDate(String date) {
         if (date == null || date.isBlank()) {
             return false;
@@ -56,6 +89,12 @@ public class GeneralValidator {
         return matcher.matches();
     }
 
+    /**
+     * Check if address valid.
+     *
+     * @param address the user's address
+     * @return true if address is valid
+     */
     public static boolean isValidAddress(String address) {
         if (address == null || address.isBlank()) {
             return false;
@@ -65,6 +104,12 @@ public class GeneralValidator {
         return matcher.matches();
     }
 
+    /**
+     * Check if problem valid.
+     *
+     * @param problem the problem
+     * @return true if problem is valid
+     */
     public static boolean isValidProblem(String problem) {
         if (problem == null || problem.isBlank()) {
             return false;
@@ -74,6 +119,12 @@ public class GeneralValidator {
         return matcher.matches();
     }
 
+    /**
+     * Check if name valid.
+     *
+     * @param name the name
+     * @return true if name is valid
+     */
     public static boolean isValidName(String name) {
         if (name == null || name.isBlank()) {
             return false;
@@ -83,6 +134,12 @@ public class GeneralValidator {
         return matcher.matches();
     }
 
+    /**
+     * Check if surname valid.
+     *
+     * @param surname the surname
+     * @return true if surname is valid
+     */
     public static boolean isValidSurname(String surname) {
         if (surname == null || surname.isBlank()) {
             return false;
@@ -92,6 +149,12 @@ public class GeneralValidator {
         return matcher.matches();
     }
 
+    /**
+     * Check if email valid.
+     *
+     * @param mail the email
+     * @return true if email is valid
+     */
     public static boolean isValidMail(String mail) {
         if (mail == null || mail.isBlank()) {
             return false;
@@ -101,6 +164,12 @@ public class GeneralValidator {
         return matcher.matches();
     }
 
+    /**
+     * Check if phone valid.
+     *
+     * @param phone the phone number
+     * @return true if phone number is valid
+     */
     public static boolean isValidPhone(String phone) {
         if (phone == null || phone.isBlank()) {
             return false;
@@ -110,6 +179,12 @@ public class GeneralValidator {
         return matcher.matches();
     }
 
+    /**
+     * Check if password valid.
+     *
+     * @param password the password
+     * @return true if password is valid
+     */
     public static boolean isValidPass(String password) {
         if (password == null || password.isBlank()) {
             return false;
@@ -119,6 +194,13 @@ public class GeneralValidator {
         return matcher.matches();
     }
 
+    /**
+     * Check if repeated password valid.
+     *
+     * @param password         the password
+     * @param repeatedPassword the repeated password
+     * @return true if repeated password is valid
+     */
     public static boolean isValidRepeatedPass(String password, String repeatedPassword) {
         if (password == null || repeatedPassword == null || password.isBlank() || repeatedPassword.isBlank()) {
             return false;

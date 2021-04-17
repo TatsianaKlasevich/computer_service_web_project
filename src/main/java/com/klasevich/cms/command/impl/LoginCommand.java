@@ -24,11 +24,20 @@ import static com.klasevich.cms.command.command_parameter.RequestParameter.PARAM
 import static com.klasevich.cms.command.command_parameter.RequestParameter.PARAM_PASSWORD;
 import static com.klasevich.cms.command.command_parameter.SessionAttribute.CURRENT_ROLE;
 
+/**
+ * @author Tatsiana Klasevich
+ * This command if for autentification.
+ */
 public class LoginCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
 
     private UserServiceImpl service;
 
+    /**
+     * Instantiates a new Login command.
+     *
+     * @param service the user service
+     */
     public LoginCommand(UserServiceImpl service) {
         this.service = service;
     }

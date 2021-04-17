@@ -19,6 +19,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
 
+/**
+ * @author Tatsiana Klasevich
+ * The Command service implementation
+ */
 public class CommandServiceImpl implements CommandService {
     private static final Logger logger = LogManager.getLogger();
     private static final ServiceDao serviceDao = new ServiceDaoImpl();

@@ -22,10 +22,19 @@ import static com.klasevich.cms.command.CommandResult.Type.REDIRECT;
 import static com.klasevich.cms.command.command_parameter.PagePath.*;
 import static com.klasevich.cms.command.command_parameter.RequestParameter.*;
 
+/**
+ * @author Tatsiana Klasevich
+ *This command allows admin and user change their profile's data.
+ */
 public class ChangeUserCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
     private UserServiceImpl service;
 
+    /**
+     * Instantiates a new Change user command.
+     *
+     * @param service the user service
+     */
     public ChangeUserCommand(UserServiceImpl service) {
         this.service = service;
     }

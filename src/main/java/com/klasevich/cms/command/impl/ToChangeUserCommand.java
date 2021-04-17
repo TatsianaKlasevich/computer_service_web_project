@@ -10,6 +10,10 @@ import static com.klasevich.cms.command.CommandResult.Type.FORWARD;
 
 import static com.klasevich.cms.command.command_parameter.PagePath.*;
 
+/**
+ * @author Tatsiana Klasevich
+ * This command allows going to changing user page.
+ */
 public class ToChangeUserCommand implements Command {
 
     @Override

@@ -1,5 +1,20 @@
 package com.klasevich.cms.model.entity;
 
+/**
+ * @author Tatsiana Klasevich
+ * The enumeration of  category types
+ */
 public enum Category {
-    LAPTOP, PRINTER, UPS
+    /**
+     * Laptop category.
+     */
+    LAPTOP,
+    /**
+     * Printer category.
+     */
+    PRINTER,
+    /**
+     * Ups category.
+     */
+    UPS
 }

@@ -13,6 +13,10 @@ import static com.klasevich.cms.command.CommandResult.Type.FORWARD;
 import static com.klasevich.cms.command.command_parameter.PagePath.ADMIN_MANAGE_SERVICE;
 import static com.klasevich.cms.command.command_parameter.RequestAttribute.MESSAGE_WARNING;
 
+/**
+ * @author Tatsiana Klasevich
+ * This command allows going to admin's manage service page.
+ */
 public class ToAdminManageServiceCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
 

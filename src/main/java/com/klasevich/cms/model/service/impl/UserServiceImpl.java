@@ -21,6 +21,10 @@ import java.util.Optional;
 
 import static com.klasevich.cms.command.command_parameter.RequestParameter.PARAM_PASSWORD;
 
+/**
+ * @author Tatsiana Klasevich
+ * The User service implementation
+ */
 public class UserServiceImpl implements UserService {
     private static final Logger logger = LogManager.getLogger();
     private UserDao userDao = new UserDaoImpl();

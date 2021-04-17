@@ -12,6 +12,10 @@ import static com.klasevich.cms.command.command_parameter.RequestAttribute.WELCO
 import static com.klasevich.cms.command.command_parameter.RequestParameter.PARAM_NAME;
 import static com.klasevich.cms.command.command_parameter.RequestParameter.PARAM_SURNAME;
 
+/**
+ * @author Tatsiana Klasevich
+ * This command allows going to login page.
+ */
 public class ToLoginCommand implements Command {
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {

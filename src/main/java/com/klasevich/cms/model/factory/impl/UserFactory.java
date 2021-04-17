@@ -7,6 +7,10 @@ import java.util.Map;
 
 import static com.klasevich.cms.command.command_parameter.RequestParameter.*;
 
+/**
+ * @author Tatsiana Klasevich
+ * The type User factory.
+ */
 public class UserFactory extends AbstractFactory<User> {
     @Override
     public User create(Map<String, String> data) {

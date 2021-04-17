@@ -21,11 +21,20 @@ import static com.klasevich.cms.command.command_parameter.RequestParameter.DATE;
 import static com.klasevich.cms.command.command_parameter.RequestParameter.ORDER_ID;
 import static com.klasevich.cms.command.command_parameter.UrlPattern.TO_FIND_ORDER_BY_ID_COMMAND;
 
+/**
+ * @author Tatsiana Klasevich
+ * This command allows admin to change an order.
+ */
 public class ChangeAdminOrderCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
 
     private OrderServiceImpl service;
 
+    /**
+     * Instantiates a new Change admin order command.
+     *
+     * @param service the order service
+     */
     public ChangeAdminOrderCommand(OrderServiceImpl service) {
         this.service = service;
     }

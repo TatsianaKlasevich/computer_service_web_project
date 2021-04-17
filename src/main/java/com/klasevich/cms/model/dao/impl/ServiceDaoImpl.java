@@ -20,6 +20,10 @@ import java.util.Optional;
 
 import static com.klasevich.cms.model.dao.impl.SqlQuery.*;
 
+/**
+ * @author Tatsiana Klasevich
+ * OrderDao implementation.
+ */
 public class ServiceDaoImpl implements ServiceDao {
     private static final Logger logger = LogManager.getLogger();
     private static final ConnectionPool pool = ConnectionPool.getInstance();

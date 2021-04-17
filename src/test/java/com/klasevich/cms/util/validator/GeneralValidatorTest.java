@@ -5,7 +5,15 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
+/**
+ * The type General validator test.
+ */
 public class GeneralValidatorTest {
+    /**
+     * Service name data object [ ] [ ].
+     *
+     * @return the object [ ] [ ]
+     */
     @DataProvider
     public Object[][] serviceNameData() {
         return new Object[][]{
@@ -20,6 +28,11 @@ public class GeneralValidatorTest {
         };
     }
 
+    /**
+     * Price data object [ ] [ ].
+     *
+     * @return the object [ ] [ ]
+     */
     @DataProvider
     public Object[][] priceData() {
         return new Object[][]{
@@ -34,6 +47,11 @@ public class GeneralValidatorTest {
         };
     }
 
+    /**
+     * Date data object [ ] [ ].
+     *
+     * @return the object [ ] [ ]
+     */
     @DataProvider
     public Object[][] dateData() {
         return new Object[][]{
@@ -49,6 +67,11 @@ public class GeneralValidatorTest {
         };
     }
 
+    /**
+     * Address data object [ ] [ ].
+     *
+     * @return the object [ ] [ ]
+     */
     @DataProvider
     public Object[][] addressData() {
         return new Object[][]{
@@ -62,6 +85,11 @@ public class GeneralValidatorTest {
         };
     }
 
+    /**
+     * Name data object [ ] [ ].
+     *
+     * @return the object [ ] [ ]
+     */
     @DataProvider
     public Object[][] nameData() {
         return new Object[][]{
@@ -77,6 +105,11 @@ public class GeneralValidatorTest {
         };
     }
 
+    /**
+     * Mail data object [ ] [ ].
+     *
+     * @return the object [ ] [ ]
+     */
     @DataProvider
     public Object[][] mailData() {
         return new Object[][]{
@@ -91,6 +124,11 @@ public class GeneralValidatorTest {
         };
     }
 
+    /**
+     * Phone data object [ ] [ ].
+     *
+     * @return the object [ ] [ ]
+     */
     @DataProvider
     public Object[][] phoneData() {
         return new Object[][]{
@@ -105,6 +143,11 @@ public class GeneralValidatorTest {
         };
     }
 
+    /**
+     * Password data object [ ] [ ].
+     *
+     * @return the object [ ] [ ]
+     */
     @DataProvider
     public Object[][] passwordData() {
         return new Object[][]{
@@ -119,48 +162,96 @@ public class GeneralValidatorTest {
         };
     }
 
+    /**
+     * Test is valid service name.
+     *
+     * @param serviceName the service name
+     * @param expected    the expected
+     */
     @Test(dataProvider = "serviceNameData")
     public void testIsValidServiceName(String serviceName, boolean expected) {
         boolean actual = GeneralValidator.isValidServiceName(serviceName);
         assertEquals(actual, expected);
     }
 
+    /**
+     * Test is valid price.
+     *
+     * @param price    the price
+     * @param expected the expected
+     */
     @Test(dataProvider = "priceData")
     public void testIsValidPrice(String price, boolean expected) {
         boolean actual = GeneralValidator.isValidPrice(price);
         assertEquals(actual, expected);
     }
 
+    /**
+     * Test is valid date.
+     *
+     * @param date     the date
+     * @param expected the expected
+     */
     @Test(dataProvider = "dateData")
     public void testIsValidDate(String date, boolean expected) {
         boolean actual = GeneralValidator.isValidDate(date);
         assertEquals(actual, expected);
     }
 
+    /**
+     * Test is valid address.
+     *
+     * @param address  the address
+     * @param expected the expected
+     */
     @Test(dataProvider = "addressData")
     public void testIsValidAddress(String address, boolean expected) {
         boolean actual = GeneralValidator.isValidAddress(address);
         assertEquals(actual, expected);
     }
 
+    /**
+     * Test is valid name.
+     *
+     * @param name     the name
+     * @param expected the expected
+     */
     @Test(dataProvider = "nameData")
     public void testIsValidName(String name, boolean expected) {
         boolean actual = GeneralValidator.isValidName(name);
         assertEquals(actual, expected);
     }
 
+    /**
+     * Test is valid mail.
+     *
+     * @param mail     the mail
+     * @param expected the expected
+     */
     @Test(dataProvider = "mailData")
     public void testIsValidMail(String mail, boolean expected) {
         boolean actual = GeneralValidator.isValidMail(mail);
         assertEquals(actual, expected);
     }
 
+    /**
+     * Test is valid phone.
+     *
+     * @param phone    the phone
+     * @param expected the expected
+     */
     @Test(dataProvider = "phoneData")
     public void testIsValidPhone(String phone, boolean expected) {
         boolean actual = GeneralValidator.isValidPhone(phone);
         assertEquals(actual, expected);
     }
 
+    /**
+     * Test is valid pass.
+     *
+     * @param password the password
+     * @param expected the expected
+     */
     @Test(dataProvider = "passwordData")
     public void testIsValidPass(String password, boolean expected) {
         boolean actual = GeneralValidator.isValidPass(password);

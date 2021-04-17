@@ -10,6 +10,10 @@ import java.util.Map;
 
 import static com.klasevich.cms.command.command_parameter.RequestParameter.*;
 
+/**
+ * @author Tatsiana Klasevich
+ * The type Computer service factory.
+ */
 public class ComputerServiceFactory extends AbstractFactory<ComputerService> {
     @Override
     public ComputerService create(Map<String, String> data) {

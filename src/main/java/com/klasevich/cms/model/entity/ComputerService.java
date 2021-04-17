@@ -2,67 +2,103 @@ package com.klasevich.cms.model.entity;
 
 import java.math.BigDecimal;
 
+/**
+ * @author Tatsiana Klasevich
+ * The object Computer service.
+ */
 public class ComputerService {
     private int id;
     private String serviceName;
     private BigDecimal price;
     private Category category;
 
+    /**
+     * Instantiates a new Computer service.
+     */
     public ComputerService() {
     }
 
-    public ComputerService(String serviceName, BigDecimal price) {
-        this.serviceName = serviceName;
-        this.price = price;
-    }
-
+    /**
+     * Instantiates a new Computer service.
+     *
+     * @param serviceName the service name
+     * @param price       the price
+     * @param category    the category type
+     */
     public ComputerService(String serviceName, BigDecimal price, Category category) {
         this.serviceName = serviceName;
         this.price = price;
         this.category = category;
     }
 
-    public ComputerService(int id, String serviceName, BigDecimal price) {
-        this.id = id;
-        this.serviceName = serviceName;
-        this.price = price;
-    }
-
-    public ComputerService(int id, String serviceName, BigDecimal price, Category category) {
-        this.id = id;
-        this.serviceName = serviceName;
-        this.price = price;
-        this.category = category;
-    }
-
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * Sets id.
+     *
+     * @param id the id
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+    /**
+     * Gets service name.
+     *
+     * @return the service name
+     */
     public String getServiceName() {
         return serviceName;
     }
 
+    /**
+     * Sets service name.
+     *
+     * @param serviceName the service name
+     */
     public void setServiceName(String serviceName) {
         this.serviceName = serviceName;
     }
 
+    /**
+     * Gets price.
+     *
+     * @return the price
+     */
     public BigDecimal getPrice() {
         return price;
     }
 
+    /**
+     * Sets price.
+     *
+     * @param price the price
+     */
     public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
+    /**
+     * Gets category.
+     *
+     * @return the category
+     */
     public Category getCategory() {
         return category;
     }
 
+    /**
+     * Sets category.
+     *
+     * @param category the category
+     */
     public void setCategory(Category category) {
         this.category = category;
     }

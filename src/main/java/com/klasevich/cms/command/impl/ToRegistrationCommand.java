@@ -9,6 +9,10 @@ import javax.servlet.http.HttpServletResponse;
 import static com.klasevich.cms.command.CommandResult.Type.FORWARD;
 import static com.klasevich.cms.command.command_parameter.PagePath.REGISTRATION;
 
+/**
+ * @author Tatsiana Klasevich
+ * This command allows going to registration page.
+ */
 public class ToRegistrationCommand implements Command {
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response) {

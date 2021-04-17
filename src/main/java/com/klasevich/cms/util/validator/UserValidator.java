@@ -7,8 +7,17 @@ import java.util.Map;
 import static com.klasevich.cms.command.command_parameter.RequestParameter.*;
 import static com.klasevich.cms.util.validator.GeneralValidator.*;
 
+/**
+ * Class check if user registration is valid.
+ */
 public class UserValidator {
 
+    /**
+     * Is valid user registration.
+     *
+     * @param data the data
+     * @return true if registration is valid
+     */
     public static boolean isValidRegistration(Map<String, String> data) {
         boolean result = true;
         String name = data.get(PARAM_NAME);
@@ -44,6 +53,12 @@ public class UserValidator {
         return result;
     }
 
+    /**
+     *  Class check if User is valid.
+     *
+     * @param data the data
+     * @return true if User is valid
+     */
     public static boolean isValidUser(Map<String, String> data) {
         boolean result = true;
         String name = data.get(PARAM_NAME);

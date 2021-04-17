@@ -11,6 +11,10 @@ import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * @author Tatsiana Klasevich
+ * The connection pool to create connection
+ */
 public class ConnectionPool {
     private static final Logger logger = LogManager.getLogger();
     private static ConnectionPool instance = new ConnectionPool();
@@ -57,6 +61,11 @@ public class ConnectionPool {
         }
     }
 
+    /**
+     * Gets instance.
+     *
+     * @return the instance
+     */
     public static ConnectionPool getInstance() {
         if (!connectionCreated.get()) {
             lock.lock();
@@ -84,6 +93,11 @@ public class ConnectionPool {
         }
     }
 
+    /**
+     * Take connection connection.
+     *
+     * @return the connection
+     */
     public Connection takeConnection() {
         Connection connection = null;
         try {
@@ -96,6 +110,11 @@ public class ConnectionPool {
         return connection;
     }
 
+    /**
+     * Release connection.
+     *
+     * @param connection the connection
+     */
     public void releaseConnection(Connection connection) {
         if (connection instanceof ProxyConnection) {
             if (givenAwayConnections.remove(connection)) {
@@ -106,6 +125,11 @@ public class ConnectionPool {
         }
     }
 
+    /**
+     * Destroy pool.
+     *
+     * @throws ConnectionPoolException the connection pool exception throws when some problems with closing connection
+     */
     public void destroyPool() throws ConnectionPoolException {
         try {
             for (int i = 0; i < DEFAULT_POOL_SIZE; i++) {
@@ -131,6 +155,11 @@ public class ConnectionPool {
         });
     }
 
+    /**
+     * Close connection.
+     *
+     * @param connection the connection
+     */
     public void closeConnection(Connection connection) {
         try {
             if (connection != null) {
@@ -141,6 +170,13 @@ public class ConnectionPool {
         }
     }
 
+    /**
+     * Close connection.
+     *
+     * @param connection the connection
+     * @param statement  the statement
+     * @param resultSets the result sets
+     */
     public void closeConnection(Connection connection, Statement statement, ResultSet... resultSets) {
         try {
             if (resultSets.length != 0) {
@@ -170,10 +206,20 @@ public class ConnectionPool {
     private class ProxyConnection implements Connection {
         private Connection connection;
 
+        /**
+         * Instantiates a new Proxy connection.
+         *
+         * @param connection the connection
+         */
         ProxyConnection(Connection connection) {
             this.connection = connection;
         }
 
+        /**
+         * Really close.
+         *
+         * @throws SQLException when some problems in sql query
+         */
         void reallyClose() throws SQLException {
             connection.close();
         }

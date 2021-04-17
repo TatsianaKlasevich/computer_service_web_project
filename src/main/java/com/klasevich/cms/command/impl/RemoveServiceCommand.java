@@ -19,10 +19,19 @@ import static com.klasevich.cms.command.command_parameter.RequestParameter.PAGE_
 import static com.klasevich.cms.command.command_parameter.RequestParameter.SERVICE_ID;
 import static com.klasevich.cms.command.command_parameter.UrlPattern.TO_SHOW_SERVICES_COMMAND;
 
+/**
+ * @author Tatsiana Klasevich
+ * This command allows admin to remove a service.
+ */
 public class RemoveServiceCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
     private CommandServiceImpl service;
 
+    /**
+     * Instantiates a new Remove service command.
+     *
+     * @param service the command service
+     */
     public RemoveServiceCommand(CommandServiceImpl service) {
         this.service = service;
     }

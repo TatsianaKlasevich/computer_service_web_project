@@ -7,8 +7,17 @@ import java.util.Map;
 import static com.klasevich.cms.command.command_parameter.RequestParameter.*;
 import static com.klasevich.cms.util.validator.GeneralValidator.*;
 
+/**
+ * Class check if Order is valid.
+ */
 public class OrderValidator {
 
+    /**
+     * Is valid order.
+     *
+     * @param data the data
+     * @return true if Order is valid
+     */
     public static boolean isValidOrder(Map<String, String> data) {
         boolean result = true;
         String date = data.get(DATE);

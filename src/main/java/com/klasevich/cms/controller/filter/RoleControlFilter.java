@@ -19,6 +19,10 @@ import static com.klasevich.cms.command.command_parameter.RequestParameter.COMMA
 import static com.klasevich.cms.command.command_parameter.SessionAttribute.USER;
 import static com.klasevich.cms.command.command_parameter.UrlPattern.CONTROLLER;
 
+/**
+ * @author Tatsiana Klasevich
+ * The filter that controles role access.
+ */
 @WebFilter(urlPatterns = {CONTROLLER})
 public class RoleControlFilter implements Filter {
     private static final Logger logger = LogManager.getLogger();

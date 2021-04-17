@@ -19,11 +19,21 @@ import static com.klasevich.cms.command.command_parameter.PagePath.*;
 import static com.klasevich.cms.command.command_parameter.RequestParameter.*;
 import static com.klasevich.cms.command.command_parameter.UrlPattern.TO_FIND_ORDER_BY_ID_COMMAND;
 
+/**
+ * @author Tatsiana Klasevich
+ * This command allows admin to add a service to order command .
+ */
 public class AdminAddServiceToOrderCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
     private OrderServiceImpl orderService;
     private CommandServiceImpl commandService;
 
+    /**
+     * Instantiates a new Admin add service to order command.
+     *
+     * @param orderService   the order service
+     * @param commandService the command service
+     */
     public AdminAddServiceToOrderCommand(OrderServiceImpl orderService, CommandServiceImpl commandService) {
         this.orderService = orderService;
         this.commandService = commandService;

@@ -19,11 +19,20 @@ import static com.klasevich.cms.command.command_parameter.PagePath.SERVICE_PRICE
 import static com.klasevich.cms.command.command_parameter.RequestAttribute.*;
 import static com.klasevich.cms.command.command_parameter.RequestParameter.*;
 
+/**
+ * @author Tatsiana Klasevich
+ * This command allows guests, users, admins all the services by a category.
+ */
 public class ShowCategoryServicesCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
 
     private CommandServiceImpl service;
 
+    /**
+     * Instantiates a new Show category services command.
+     *
+     * @param service the command service
+     */
     public ShowCategoryServicesCommand(CommandServiceImpl service) {
         this.service = service;
     }

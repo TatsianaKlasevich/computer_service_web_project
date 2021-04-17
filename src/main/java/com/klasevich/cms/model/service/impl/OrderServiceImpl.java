@@ -18,6 +18,10 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
+/**
+ * @author Tatsiana Klasevich
+ * The Order service implementation
+ */
 public class OrderServiceImpl implements OrderService {
     private static final Logger logger = LogManager.getLogger();
     private AbstractFactory<Order> factory = new OrderFactory();

@@ -23,12 +23,22 @@ import static com.klasevich.cms.command.command_parameter.PagePath.*;
 import static com.klasevich.cms.command.command_parameter.RequestAttribute.*;
 import static java.math.RoundingMode.HALF_UP;
 
+/**
+ * @author Tatsiana Klasevich
+ * This command allows user to see his order.
+ */
 public class ShowUserOrderCommand implements Command {
     private static final Logger logger = LogManager.getLogger();
 
     private OrderServiceImpl orderService;
     private CommandServiceImpl commandService;
 
+    /**
+     * Instantiates a new Show user order command.
+     *
+     * @param orderService   the order service
+     * @param commandService the command service
+     */
     public ShowUserOrderCommand(OrderServiceImpl orderService, CommandServiceImpl commandService) {
         this.orderService = orderService;
         this.commandService = commandService;
