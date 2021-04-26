@@ -1,4 +1,5 @@
-h1 Computer Maintenance Service
+ Computer Maintenance Service
+ =====================
 
 ###### h6 Author – Tatsiana Klasevich
 ***
