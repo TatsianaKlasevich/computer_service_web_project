@@ -3,10 +3,10 @@
 
 ### Author – Tatsiana Klasevich
 ***
-### h3 General information
+### General information
 The web application provides the opportunity for the customer to order the services of a courier for the delivery of equipment to and from the service center, to receive information of orders in real time. The administrator adds information about the order, order’s status changes. After diagnosis, the customer can confirm the order or refuse maintenance. A discount on service is also provided to the preferential category of customers. 
 ***
-### h3 Users (Guest, User, Admin)
+### Users (Guest, User, Admin)
 
 **Common functionality:**
 
