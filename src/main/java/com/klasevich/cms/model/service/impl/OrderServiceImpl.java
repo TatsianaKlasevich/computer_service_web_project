@@ -24,8 +24,8 @@ import java.util.*;
  */
 public class OrderServiceImpl implements OrderService {
     private static final Logger logger = LogManager.getLogger();
-    private AbstractFactory<Order> factory = new OrderFactory();
-    private OrderDao orderDao = new OrderDaoImpl();
+    private final AbstractFactory<Order> factory = new OrderFactory();
+    private final OrderDaoImpl orderDao = OrderDaoImpl.getInstance();
 
     @Override
     public int addOrder(Map<String, String> data, boolean hasDiscount, User user) throws ServiceException {

@@ -25,10 +25,9 @@ import java.util.*;
  */
 public class CommandServiceImpl implements CommandService {
     private static final Logger logger = LogManager.getLogger();
-    private static final ServiceDao serviceDao = new ServiceDaoImpl();
+    private final ServiceDaoImpl serviceDao =ServiceDaoImpl.getInstance();
     private static Properties properties;
-    private AbstractFactory<ComputerService> factory = new ComputerServiceFactory();
-
+    private final AbstractFactory<ComputerService> factory = new ComputerServiceFactory();
 
     static {
         properties = new Properties();

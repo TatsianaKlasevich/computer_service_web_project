@@ -27,8 +27,8 @@ import static com.klasevich.cms.command.command_parameter.RequestParameter.PARAM
  */
 public class UserServiceImpl implements UserService {
     private static final Logger logger = LogManager.getLogger();
-    private UserDao userDao = new UserDaoImpl();
-    private AbstractFactory<User> factory = new UserFactory();
+    private final UserDaoImpl userDao = UserDaoImpl.getInstance();
+    private final AbstractFactory<User> factory = new UserFactory();
 
     @Override
     public Optional<User> findUserByMailPassword(String mail, String password) throws ServiceException {

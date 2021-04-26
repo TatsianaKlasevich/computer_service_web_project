@@ -23,7 +23,16 @@ import static com.klasevich.cms.model.dao.impl.SqlQuery.*;
 public class OrderDaoImpl implements OrderDao {
     private static final Logger logger = LogManager.getLogger();
     private static final ConnectionPool pool = ConnectionPool.getInstance();
-    private static final UserDaoImpl dao = new UserDaoImpl();
+    private static final UserDaoImpl dao = UserDaoImpl.getInstance();
+    private static final OrderDaoImpl instance = new OrderDaoImpl();
+
+    private OrderDaoImpl(){
+    }
+
+    public static OrderDaoImpl getInstance(){
+        return instance;
+    }
+
 
     @Override
     public int addOrder(Order order) throws DaoException {

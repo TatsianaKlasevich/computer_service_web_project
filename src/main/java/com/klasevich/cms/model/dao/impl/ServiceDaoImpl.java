@@ -27,6 +27,14 @@ import static com.klasevich.cms.model.dao.impl.SqlQuery.*;
 public class ServiceDaoImpl implements ServiceDao {
     private static final Logger logger = LogManager.getLogger();
     private static final ConnectionPool pool = ConnectionPool.getInstance();
+    private static final ServiceDaoImpl instance = new ServiceDaoImpl();
+
+    private ServiceDaoImpl(){
+    }
+
+    public static ServiceDaoImpl getInstance(){
+        return instance;
+    }
 
     @Override
     public boolean addService(ComputerService service) throws DaoException {

@@ -18,7 +18,7 @@ import static com.klasevich.cms.command.command_parameter.RequestParameter.*;
  */
 public class OrderFactory extends AbstractFactory<Order> {
     private static final String DATE_FORMAT = "yyyy.MM.d";
-    private UserDao userDao = new UserDaoImpl();
+    private final UserDao userDao =UserDaoImpl.getInstance();
 
     public Order create(Map<String, String> data) {
         Status status = Status.CHECKING;

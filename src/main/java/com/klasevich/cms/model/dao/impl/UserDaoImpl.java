@@ -22,6 +22,14 @@ import static com.klasevich.cms.model.dao.impl.SqlQuery.*;
 public class UserDaoImpl implements UserDao {
     private static final Logger logger = LogManager.getLogger();
     private static final ConnectionPool pool = ConnectionPool.getInstance();
+    private static final UserDaoImpl instance = new UserDaoImpl();
+
+    private UserDaoImpl(){
+    }
+
+    public static UserDaoImpl getInstance(){
+        return instance;
+    }
 
     @Override
     public boolean register(User user, String encodingPassword) throws DaoException {
