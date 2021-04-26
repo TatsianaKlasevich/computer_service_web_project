@@ -19,12 +19,13 @@ import java.util.Optional;
 import static com.klasevich.cms.command.command_parameter.PagePath.INDEX;
 import static com.klasevich.cms.command.command_parameter.RequestParameter.COMMAND;
 import static com.klasevich.cms.command.command_parameter.UrlPattern.CONTROLLER;
+import static com.klasevich.cms.command.command_parameter.UrlPattern.DO;
 
 /**
  * @author Tatsiana Klasevich
  * The class of main controller
  */
-@WebServlet(urlPatterns = {CONTROLLER})
+@WebServlet(urlPatterns = {CONTROLLER, DO})
 public class Controller extends HttpServlet {
     private static final Logger logger = LogManager.getLogger();
 

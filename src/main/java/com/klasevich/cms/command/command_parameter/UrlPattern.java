@@ -13,6 +13,11 @@ public class UrlPattern {
      */
     public static final String CONTROLLER = "/controller";
     /**
+     * The constant DO.
+     */
+    public static final String DO = "*.do";
+
+    /**
      * The constant CONTROLLER_BEFORE.
      */
     public static final String CONTROLLER_BEFORE = "/controller?";
